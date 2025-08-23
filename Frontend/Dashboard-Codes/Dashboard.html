@@ -12,14 +12,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="Dashboard.css" rel="stylesheet">
+    <link rel="stylesheet" href="Dashboard.css">
 
+    <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="Dashboard.js" defer></script>
-
-    
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide-react@0.292.0/dist/lucide-react.js"></script>
 
 </head>
 <body class="bg-custom-background text-custom-dark-gray">
@@ -68,7 +64,7 @@
                 </nav>
             </div>
             <div class="flex items-center">
-                <img src="https://placehold.co/40x40/E2E8F0/4A5568?text=OM" alt="User Avatar" class="rounded-full mr-3">
+                <img src="https://placehold.co/40x40/E2E8F0/4A5568?text=OM" alt="User Avatar" class="rounded-full mr-3" onerror="this.onerror=null;this.src='https://placehold.co/40x40/E2E8F0/4A5568?text=OM';">
                 <div>
                     <p class="font-semibold">OM KHEBADE</p>
                     <a href="#" class="text-sm text-custom-gray">View Profile</a>
@@ -120,21 +116,19 @@
                         <div class="lg:col-span-3 bg-white p-4 rounded-lg shadow-sm flex flex-col">
                             <h2 class="text-lg font-semibold mb-2">Sales Reports</h2>
                             <div class="flex-1 grid grid-rows-2 gap-2">
-    <div class="bg-gray-50 rounded-lg flex items-center justify-center p-2 chart-container">
-    <canvas id="financeFlowChart"></canvas>
-</div>
-<div class="bg-gray-50 rounded-lg flex items-center justify-center p-2 chart-container">
-    <canvas id="totalOrderChart"></canvas>
-</div>
-</div>
-
+                                <div class="bg-gray-50 rounded-lg flex items-center justify-center p-2 chart-container">
+                                    <canvas id="financeFlowChart"></canvas>
+                                </div>
+                                <div class="bg-gray-50 rounded-lg flex items-center justify-center p-2 chart-container">
+                                    <canvas id="totalOrderChart"></canvas>
+                                </div>
+                            </div>
                         </div>
                         <div class="lg:col-span-2 bg-white p-4 rounded-lg shadow-sm flex flex-col">
                              <h2 class="text-lg font-semibold mb-2">Category</h2>
                             <div class="flex-1 flex items-center justify-center chart-container">
-    <canvas id="categoryChart"></canvas>
-</div>
-
+                                <canvas id="categoryChart"></canvas>
+                            </div>
                             <div class="flex justify-center space-x-2 text-xs mt-2">
                                 <span class="flex items-center"><span class="w-2 h-2 rounded-full bg-blue-500 mr-1"></span>Wholesaler</span>
                                 <span class="flex items-center"><span class="w-2 h-2 rounded-full bg-purple-500 mr-1"></span>Retailer</span>
@@ -173,7 +167,7 @@
                     <h1 class="text-3xl font-bold text-gray-800">All Recent Orders</h1>
                     <button class="back-to-dashboard-btn bg-custom-purple text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-purple-700">Back to Dashboard</button>
                 </div>
-                <div class="bg-white p-4 rounded-lg shadow-sm flex-1 overflow-y-auto main-content-area">
+                <div class="bg-white p-4 rounded-lg shadow-sm flex-1 overflow-y-auto">
                     <table class="w-full text-left text-sm">
                         <thead>
                             <tr class="bg-custom-light-purple text-custom-purple text-xs">
@@ -194,7 +188,7 @@
 
         <!-- Right Sidebar (Summary) -->
         <aside class="w-80 bg-custom-light-gray p-4 flex flex-col gap-4 overflow-hidden">
-            <div id="summary-cards-container" class="flex flex-col gap-4 flex-1">
+            <div id="summary-view" class="flex flex-col gap-4 flex-1">
                 <h2 class="text-xl font-bold text-gray-800">Summary</h2>
                 
                 <div id="balance-card" class="bg-white p-4 rounded-lg shadow-sm">
@@ -215,9 +209,9 @@
                         <button id="see-all-dues-btn" class="text-xs text-custom-purple">SEE ALL</button>
                     </div>
                     <ul class="space-y-2">
-                        <li class="flex items-center justify-between text-sm"><div class="flex items-center"><img src="https://placehold.co/28x28/E2E8F0/4A5568?text=AK" alt="Avatar" class="rounded-full mr-2"><span>Ajit Kumar</span></div><div class="text-right"><p class="font-semibold text-xs">₹ 34,500</p><p class="text-xs text-custom-gray">23-jul</p></div></li>
-                        <li class="flex items-center justify-between text-sm"><div class="flex items-center"><img src="https://placehold.co/28x28/E2E8F0/4A5568?text=P" alt="Avatar" class="rounded-full mr-2"><span>Parth</span></div><div class="text-right"><p class="font-semibold text-xs">₹ 39,100</p><p class="text-xs text-custom-gray">23-jul</p></div></li>
-                        <li class="flex items-center justify-between text-sm"><div class="flex items-center"><img src="https://placehold.co/28x28/E2E8F0/4A5568?text=A" alt="Avatar" class="rounded-full mr-2"><span>Akshay</span></div><div class="text-right"><p class="font-semibold text-xs">₹ 89,100</p><p class="text-xs text-custom-gray">23-jul</p></div></li>
+                        <li class="flex items-center justify-between text-sm"><div class="flex items-center"><img src="https://placehold.co/28x28/E2E8F0/4A5568?text=AK" alt="Avatar" class="rounded-full mr-2" onerror="this.onerror=null;this.src='https://placehold.co/28x28/E2E8F0/4A5568?text=AK';"><span>Ajit Kumar</span></div><div class="text-right"><p class="font-semibold text-xs">₹ 34,500</p><p class="text-xs text-custom-gray">23-jul</p></div></li>
+                        <li class="flex items-center justify-between text-sm"><div class="flex items-center"><img src="https://placehold.co/28x28/E2E8F0/4A5568?text=P" alt="Avatar" class="rounded-full mr-2" onerror="this.onerror=null;this.src='https://placehold.co/28x28/E2E8F0/4A5568?text=P';"><span>Parth</span></div><div class="text-right"><p class="font-semibold text-xs">₹ 39,100</p><p class="text-xs text-custom-gray">23-jul</p></div></li>
+                        <li class="flex items-center justify-between text-sm"><div class="flex items-center"><img src="https://placehold.co/28x28/E2E8F0/4A5568?text=A" alt="Avatar" class="rounded-full mr-2" onerror="this.onerror=null;this.src='https://placehold.co/28x28/E2E8F0/4A5568?text=A';"><span>Akshay</span></div><div class="text-right"><p class="font-semibold text-xs">₹ 89,100</p><p class="text-xs text-custom-gray">23-jul</p></div></li>
                     </ul>
                 </div>
 
@@ -226,32 +220,30 @@
                         <h3 class="font-semibold text-base">Order Status</h3>
                         <button id="see-all-status-btn" class="text-xs text-custom-purple">SEE ALL</button>
                     </div>
-        <div class="flex-1 flex flex-col items-center justify-center chart-container">
-    <canvas id="statusChart"></canvas>
-    <div class="flex justify-around w-full mt-2">
-        <div class="text-center"><p class="text-xl font-bold text-gray-800">27</p><p class="text-xs text-custom-gray">Completed</p></div>
-        <div class="text-center"><p class="text-xl font-bold text-gray-800">03</p><p class="text-xs text-custom-gray">Pending</p></div>
-    </div>
-</div>
-
-</div>
+                    <div class="flex-1 flex flex-col items-center justify-center chart-container">
+                        <canvas id="statusChart"></canvas>
+                        <div class="flex justify-around w-full mt-2">
+                            <div class="text-center"><p class="text-xl font-bold text-gray-800">27</p><p class="text-xs text-custom-gray">Completed</p></div>
+                            <div class="text-center"><p class="text-xl font-bold text-gray-800">03</p><p class="text-xs text-custom-gray">Pending</p></div>
+                        </div>
+                    </div>
                 </div>
             </div>
             
             <div id="all-dues-view" class="hidden bg-white p-4 rounded-lg shadow-sm flex-1 flex-col gap-2">
                 <div class="flex justify-between items-center mb-2"><h3 class="font-semibold text-base">All Recent Dues</h3><button class="back-to-summary-btn text-xs text-custom-purple">BACK</button></div>
-                <ul class="space-y-3 overflow-y-auto main-content-area">
-                    <li class="flex items-center justify-between text-sm p-2 rounded-lg hover:bg-gray-50"><div class="flex items-center"><img src="https://placehold.co/28x28/E2E8F0/4A5568?text=AK" alt="Avatar" class="rounded-full mr-3"><span>Ajit Kumar</span></div><div class="text-right"><p class="font-semibold">₹ 34,500</p><p class="text-xs text-custom-gray">Due: 23-jul</p></div></li>
-                    <li class="flex items-center justify-between text-sm p-2 rounded-lg hover:bg-gray-50"><div class="flex items-center"><img src="https://placehold.co/28x28/E2E8F0/4A5568?text=P" alt="Avatar" class="rounded-full mr-3"><span>Parth</span></div><div class="text-right"><p class="font-semibold">₹ 39,100</p><p class="text-xs text-custom-gray">Due: 23-jul</p></div></li>
-                    <li class="flex items-center justify-between text-sm p-2 rounded-lg hover:bg-gray-50"><div class="flex items-center"><img src="https://placehold.co/28x28/E2E8F0/4A5568?text=A" alt="Avatar" class="rounded-full mr-3"><span>Akshay</span></div><div class="text-right"><p class="font-semibold">₹ 89,100</p><p class="text-xs text-custom-gray">Due: 23-jul</p></div></li>
-                    <li class="flex items-center justify-between text-sm p-2 rounded-lg hover:bg-gray-50"><div class="flex items-center"><img src="https://placehold.co/28x28/E2E8F0/4A5568?text=V" alt="Avatar" class="rounded-full mr-3"><span>Varun</span></div><div class="text-right"><p class="font-semibold">₹ 12,200</p><p class="text-xs text-custom-gray">Due: 24-jul</p></div></li>
-                    <li class="flex items-center justify-between text-sm p-2 rounded-lg hover:bg-gray-50"><div class="flex items-center"><img src="https://placehold.co/28x28/E2E8F0/4A5568?text=S" alt="Avatar" class="rounded-full mr-3"><span>Sunita</span></div><div class="text-right"><p class="font-semibold">₹ 5,600</p><p class="text-xs text-custom-gray">Due: 25-jul</p></div></li>
+                <ul class="space-y-3 overflow-y-auto">
+                    <li class="flex items-center justify-between text-sm p-2 rounded-lg hover:bg-gray-50"><div class="flex items-center"><img src="https://placehold.co/28x28/E2E8F0/4A5568?text=AK" alt="Avatar" class="rounded-full mr-3" onerror="this.onerror=null;this.src='https://placehold.co/28x28/E2E8F0/4A5568?text=AK';"><span>Ajit Kumar</span></div><div class="text-right"><p class="font-semibold">₹ 34,500</p><p class="text-xs text-custom-gray">Due: 23-jul</p></div></li>
+                    <li class="flex items-center justify-between text-sm p-2 rounded-lg hover:bg-gray-50"><div class="flex items-center"><img src="https://placehold.co/28x28/E2E8F0/4A5568?text=P" alt="Avatar" class="rounded-full mr-3" onerror="this.onerror=null;this.src='https://placehold.co/28x28/E2E8F0/4A5568?text=P';"><span>Parth</span></div><div class="text-right"><p class="font-semibold">₹ 39,100</p><p class="text-xs text-custom-gray">Due: 23-jul</p></div></li>
+                    <li class="flex items-center justify-between text-sm p-2 rounded-lg hover:bg-gray-50"><div class="flex items-center"><img src="https://placehold.co/28x28/E2E8F0/4A5568?text=A" alt="Avatar" class="rounded-full mr-3" onerror="this.onerror=null;this.src='https://placehold.co/28x28/E2E8F0/4A5568?text=A';"><span>Akshay</span></div><div class="text-right"><p class="font-semibold">₹ 89,100</p><p class="text-xs text-custom-gray">Due: 23-jul</p></div></li>
+                    <li class="flex items-center justify-between text-sm p-2 rounded-lg hover:bg-gray-50"><div class="flex items-center"><img src="https://placehold.co/28x28/E2E8F0/4A5568?text=V" alt="Avatar" class="rounded-full mr-3" onerror="this.onerror=null;this.src='https://placehold.co/28x28/E2E8F0/4A5568?text=V';"><span>Varun</span></div><div class="text-right"><p class="font-semibold">₹ 12,200</p><p class="text-xs text-custom-gray">Due: 24-jul</p></div></li>
+                    <li class="flex items-center justify-between text-sm p-2 rounded-lg hover:bg-gray-50"><div class="flex items-center"><img src="https://placehold.co/28x28/E2E8F0/4A5568?text=S" alt="Avatar" class="rounded-full mr-3" onerror="this.onerror=null;this.src='https://placehold.co/28x28/E2E8F0/4A5568?text=S';"><span>Sunita</span></div><div class="text-right"><p class="font-semibold">₹ 5,600</p><p class="text-xs text-custom-gray">Due: 25-jul</p></div></li>
                 </ul>
             </div>
 
             <div id="all-status-view" class="hidden bg-white p-4 rounded-lg shadow-sm flex-1 flex-col gap-2">
                 <div class="flex justify-between items-center mb-2"><h3 class="font-semibold text-base">All Order Statuses</h3><button class="back-to-summary-btn text-xs text-custom-purple">BACK</button></div>
-                <ul class="space-y-3 overflow-y-auto main-content-area">
+                <ul class="space-y-3 overflow-y-auto">
                     <li class="flex items-center justify-between text-sm p-2 rounded-lg hover:bg-gray-50"><span>Completed</span><span class="font-semibold text-custom-green">27</span></li>
                     <li class="flex items-center justify-between text-sm p-2 rounded-lg hover:bg-gray-50"><span>On-transit</span><span class="font-semibold text-yellow-500">5</span></li>
                     <li class="flex items-center justify-between text-sm p-2 rounded-lg hover:bg-gray-50"><span>Pending</span><span class="font-semibold text-orange-500">3</span></li>
@@ -260,5 +252,6 @@
             </div>
         </aside>
     </div>
+    <script src="Dashboard.js"></script>
 </body>
 </html>
