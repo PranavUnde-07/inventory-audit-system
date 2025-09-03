@@ -5,14 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About & Support</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="About.css">
-
+  <link rel="stylesheet" href="style.css">
+  
 </head>
-<body class="bg-gray-100 font-sans">
+<body class="bg-gray-100 font-Inter">
 
   <div class="flex min-h-screen">
 
- <aside class="w-64 bg-white p-6 flex flex-col justify-between">
+    <!-- Sidebar -->
+<body class=" text-custom-dark-gray">
+    <!-- Main container with fixed screen height -->
+    <div class="flex h-screen ">
+        <!-- Left Sidebar -->
+        <aside class="w-64 bg-white p-6 flex flex-col justify-between">
             <div>
                 <div class="mb-8">
                     <h1 class="text-3xl font-bold text-center text-gray-800">D-Mart</h1>
@@ -20,40 +25,55 @@
                 <nav>
                     <ul>
                         <li class="mb-2">
-                            <a href="#" class="flex items-center p-3 bg-custom-light-purple text-custom-purple rounded-lg font-semibold">
+                            <a href="#" class="flex items-center p-3 hover:bg-purple-100 rounded-lg">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="sidebar-icon mr-3"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
                                 DASHBOARD
                             </a>
                         </li>
                         <li class="mb-2">
-                            <a href="#" class="flex items-center p-3 hover:bg-gray-100 rounded-lg">
+                            <a href="#" class="flex items-center p-3 hover:bg-purple-100 rounded-lg">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="sidebar-icon mr-3"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path><path d="m3.3 7 8.7 5 8.7-5"></path><path d="M12 22V12"></path></svg>
                                 INVENTORY
                             </a>
                         </li>
-                        <li class="mb-2">
+                       <li class="mb-2">
                             <a href="#" class="flex items-center p-3 hover:bg-gray-100 rounded-lg">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="sidebar-icon mr-3"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect></svg>
                                 BILLING
                             </a>
                         </li>
+                       
+
                         <li class="mb-2">
-                            <a href="#" class="flex items-center p-3 hover:bg-gray-100 rounded-lg">
+                            <a href="#" class="flex items-center p-3 hover:bg-purple-100 rounded-lg">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="sidebar-icon mr-3"><path d="M3 3v18h18"></path><path d="M18.7 8a6 6 0 0 0-8.4-8.4"></path><path d="M13 10.5a2.5 2.5 0 0 1-3.5-3.5"></path></svg>
                                 REPORTS
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="flex items-center p-3 hover:bg-gray-100 rounded-lg">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="sidebar-icon mr-3"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg>
-                                ABOUT
-                            </a>
-                        </li>
+  <a href="#" 
+     class="flex items-center p-3 bg-purple-100 text-purple-700 rounded-lg font-semibold hover:bg-purple-200 transition">
+     
+    <!-- Icon -->
+    <svg xmlns="http://www.w3.org/2000/svg" 
+         class="sidebar-icon mr-3" 
+         width="24" height="24" viewBox="0 0 24 24" 
+         fill="none" stroke="currentColor" 
+         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"></circle>
+      <path d="M12 16v-4"></path>
+      <path d="M12 8h.01"></path>
+    </svg>
+
+    ABOUT
+  </a>
+</li>
+
                     </ul>
                 </nav>
             </div>
             <div class="flex items-center">
-                <img src="https://placehold.co/40x40/E2E8F0/4A5568?text=OM" alt="User Avatar" class="rounded-full mr-3">
+                <img src="https://placehold.co/40x40/E2E8F0/4A5568?text=OM" alt="User Avatar" class="rounded-full mr-3" onerror="this.onerror=null;this.src='https://placehold.co/40x40/E2E8F0/4A5568?text=OM';">
                 <div>
                     <p class="font-semibold">OM KHEBADE</p>
                     <a href="#" class="text-sm text-custom-gray">View Profile</a>
@@ -61,44 +81,35 @@
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-auto text-gray-500"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 0 2l-.15.08a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l-.22-.38a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1 0-2l.15-.08a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path><circle cx="12" cy="12" r="3"></circle></svg>
             </div>
         </aside>
-
-        <!-- Main Content Area -->
-        <main class="flex-1 p-6 flex flex-col overflow-hidden">
-
-      <!-- User Info -->
-            <div class="flex items-center space-x-3 mt-8">
-                <img src="images.png" class="h-10 w-10 rounded-full" alt="User">
-                <div>
-                <p class="text-sm font-medium">Om Khebade</p>
-                <p class="text-xs text-gray-500">View Profile</p>
-                </div>
-            </div>
-            </aside>
+      
+           
 
 
     <!-- Main Content -->
-    <main class="flex-1 p-6 ">
+    <main class="flex-1 p-6 bg-[#F8F6FF] ">
       <!-- Header -->
-      <div class="flex justify-between items-center mb-6 mt-6">
-  <h1 class="text-2xl font-bold">About and Support</h1>
-  <button class="bg-blue-100 text-blue-700 px-4 py-1 rounded-full text-sm">Aug 03, 2025</button>
-</div>
+      
 
 
       <!-- Team Sections -->
-      <div class="bg-white rounded-lg shadow p-6 space-y-6 h-[750px]">
+      <div class="bg-white rounded-lg shadow p-6 space-y-6 h-[830px] w-[1235px]">
+        <div class="flex justify-between items-center mb-6 mt-6 w-[1000]">
+  <h1 class="text-4xl font-bold font-Inter ">About and Support</h1>
+  <button class=" text-black px-4 py-3  text-sm">Aug 10 2025  12:55PM</button>
+        </div>
 
         <!-- Design Team -->
-      <div class="border-b border-gray-300 pb-4 mb-4">
-  <h4 class="font-semibold mb-3"># Designer Team</h4>
+      <div class="border-b border-gray-300 pb-4 mb-4 py-3">
+  <h4 class="font-semibold mb-3 font-Inter"># Designer Team</h4>
+
 
   <div class="flex flex-wrap gap-8">
     <!-- Member 1 -->
     <div class="flex items-center space-x-4">
       <img src="images.png" class="w-12 h-12 rounded-full" alt="">
       <div>
-        <p class="text-base font-medium">Om Khebade</p>
-        <p class="text-sm text-gray-500">Developer</p>
+        <p class="text-base font-medium font-Inter">Om Khebade</p>
+        <p class="text-sm text-gray-500">Designer</p>
       </div>
     </div>
 
@@ -106,8 +117,8 @@
     <div class="flex items-center space-x-4">
       <img src="images.png" class="w-12 h-12 rounded-full" alt="">
       <div>
-        <p class="text-base font-medium">Omkar Saundore</p>
-        <p class="text-sm text-gray-500">Developer</p>
+        <p class="text-base font-medium font-Inter">Omkar Saundore</p>
+        <p class="text-sm text-gray-500">Designer</p>
       </div>
     </div>
 
@@ -115,8 +126,8 @@
     <div class="flex items-center space-x-4">
       <img src="images.png" class="w-12 h-12 rounded-full" alt="">
       <div>
-        <p class="text-base font-medium">Prathamesh Zarekar</p>
-        <p class="text-sm text-gray-500">Developer</p>
+        <p class="text-base font-medium font-Inter">Prathamesh Zarekar</p>
+        <p class="text-sm text-gray-500">Designer</p>
       </div>
     </div>
 
@@ -124,8 +135,8 @@
     <div class="flex items-center space-x-4">
       <img src="images.png" class="w-12 h-12 rounded-full" alt="">
       <div>
-        <p class="text-base font-medium">Palak</p>
-        <p class="text-sm text-gray-500">Developer</p>
+        <p class="text-base font-medium font-Inter">Palak</p>
+        <p class="text-sm text-gray-500">Designer</p>
       </div>
     </div>
   </div>
@@ -140,7 +151,7 @@
   <div class="flex flex-wrap gap-8">
     <!-- Member 1 -->
     <div class="flex items-center space-x-4">
-      <img src="images.png" class="w-12 h-12 rounded-full" alt="">
+      <img src="images.png" class="w-14 h-14 rounded-full" alt="">
       <div>
         <p class="text-base font-medium">Harshit</p>
         <p class="text-sm text-gray-500">Developer</p>
@@ -149,7 +160,7 @@
 
     <!-- Member 2 -->
     <div class="flex items-center space-x-4">
-      <img src="images.png" class="w-12 h-12 rounded-full" alt="">
+      <img src="images.png" class="w-14 h-14 rounded-full" alt="">
       <div>
         <p class="text-base font-medium">Abhijeet</p>
         <p class="text-sm text-gray-500">Developer</p>
@@ -158,7 +169,7 @@
 
     <!-- Member 3 -->
     <div class="flex items-center space-x-4">
-      <img src="images.png" class="w-12 h-12 rounded-full" alt="">
+      <img src="images.png" class="w-14 h-14 rounded-full" alt="">
       <div>
         <p class="text-base font-medium">Pranav Unde</p>
         <p class="text-sm text-gray-500">Developer</p>
@@ -167,7 +178,7 @@
 
     <!-- Member 4 -->
     <div class="flex items-center space-x-4">
-      <img src="images.png" class="w-12 h-12 rounded-full" alt="">
+      <img src="images.png" class="w-14 h-14 rounded-full" alt="">
       <div>
         <p class="text-base font-medium">Prajwal</p>
         <p class="text-sm text-gray-500">Developer</p>
@@ -176,7 +187,7 @@
 
     <!-- Member 5 -->
     <div class="flex items-center space-x-4">
-      <img src="images.png" class="w-12 h-12 rounded-full" alt="">
+      <img src="images.png" class="w-14 h-14 rounded-full" alt="">
       <div>
         <p class="text-base font-medium">Ayushi</p>
         <p class="text-sm text-gray-500">Developer</p>
@@ -185,7 +196,7 @@
 
     <!-- Member 6 -->
     <div class="flex items-center space-x-4">
-      <img src="images.png" class="w-12 h-12 rounded-full" alt="">
+      <img src="images.png" class="w-14 h-14 rounded-full" alt="">
       <div>
         <p class="text-base font-medium">Sonali</p>
         <p class="text-sm text-gray-500">Developer</p>
@@ -195,55 +206,59 @@
 </div>
 
     
-        <!-- Database Team -->
-        <div class="border-b border-gray-300 pb-4 mb-4">
-  <h4 class="font-semibold mb-3"># Database Team</h4>
+       <!-- Teams Wrapper -->
+<div class="flex space-x-12">
+  
+  <!-- Database Team -->
+  <div class="border-b border-gray-300 pb-4 mb-4 w-1/2">
+    <h4 class="font-semibold mb-3"># Database Team</h4>
 
-  <div class="flex space-x-12">
-    <!-- Member 1 -->
-    <div class="flex items-center space-x-4">
-      <img src="images.png" class="w-12 h-12 rounded-full" alt="">
-      <div>
-        <p class="text-base font-medium">Pranav Sonavane</p>
-        <p class="text-sm text-gray-500">Data & SQL</p>
+    <div class="flex space-x-12">
+      <!-- Member 1 -->
+      <div class="flex items-center space-x-4">
+        <img src="images.png" class="w-14 h-14 rounded-full" alt="">
+        <div>
+          <p class="text-base font-medium">Pranav Sonavane</p>
+          <p class="text-sm text-gray-500">Data & SQL</p>
+        </div>
       </div>
-    </div>
 
-    <!-- Member 2 -->
-    <div class="flex items-center space-x-4">
-      <img src="images.png" class="w-12 h-12 rounded-full" alt="">
-      <div>
-        <p class="text-base font-medium">Mukesh</p>
-        <p class="text-sm text-gray-500">Data & SQL</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-        <!-- Power BI Team -->
-        <div class="border-b border-gray-300 pb-4 mb-4">
-  <h4 class="font-semibold mb-3"># Power BI Team</h4>
-
-  <div class="flex space-x-12">
-    <!-- Member 1 -->
-    <div class="flex items-center space-x-4">
-      <img src="images.png" class="w-12 h-12 rounded-full" alt="">
-      <div>
-        <p class="text-base font-medium">Harsh</p>
-        <p class="text-sm text-gray-500">Developer</p>
-      </div>
-    </div>
-
-    <!-- Member 2 -->
-    <div class="flex items-center space-x-4">
-      <img src="images.png" class="w-12 h-12 rounded-full" alt="">
-      <div>
-        <p class="text-base font-medium">Prathamesh</p>
-        <p class="text-sm text-gray-500">Developer</p>
+      <!-- Member 2 -->
+      <div class="flex items-center space-x-4">
+        <img src="images.png" class="w-14 h-14 rounded-full" alt="">
+        <div>
+          <p class="text-base font-medium">Mukesh</p>
+          <p class="text-sm text-gray-500">Data & SQL</p>
+        </div>
       </div>
     </div>
   </div>
+
+  <!-- Power BI Team -->
+  <div class="border-b border-gray-300 pb-4 mb-4 w-1/2">
+    <h4 class="font-semibold mb-3"># Power BI Team</h4>
+
+    <div class="flex space-x-12">
+      <!-- Member 1 -->
+      <div class="flex items-center space-x-4">
+        <img src="images.png" class="w-14 h-14 rounded-full" alt="">
+        <div>
+          <p class="text-base font-medium">Harsh</p>
+          <p class="text-sm text-gray-500">Developer</p>
+        </div>
+      </div>
+
+      <!-- Member 2 -->
+      <div class="flex items-center space-x-4">
+        <img src="images.png" class="w-14 h-14 rounded-full" alt="">
+        <div>
+          <p class="text-base font-medium">Prathamesh</p>
+          <p class="text-sm text-gray-500">Developer</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>
 
 
@@ -256,7 +271,7 @@
   <div class="flex space-x-12">
     <!-- Member 1 -->
     <div class="flex items-center space-x-4">
-      <img src="images.png" class="w-12 h-12 rounded-full" alt="">
+      <img src="images.png" class="w-14 h-14 rounded-full" alt="">
       <div>
         <p class="text-base font-medium">Harsh</p>
         <p class="text-sm text-gray-500">Testing</p>
@@ -265,7 +280,7 @@
 
     <!-- Member 2 -->
     <div class="flex items-center space-x-4">
-      <img src="images.png" class="w-12 h-12 rounded-full" alt="">
+      <img src="images.png" class="w-14 h-14 rounded-full" alt="">
       <div>
         <p class="text-base font-medium">Prajwal</p>
         <p class="text-sm text-gray-500">Testing</p>
@@ -275,9 +290,9 @@
 </div>
 
 <!-- Rating -->
-<div class="flex items-start space-x-6">
+<div class="flex justify-center items-center space-x-6">
   <!-- Left: Rate Us -->
-  <p class="font-bold text-4xl">Rate Us...</p>
+  <p class="font-bold text-2xl">Rate Us...</p>
 
   <!-- Right: Stars + Share Experience -->
   <div>
@@ -290,7 +305,7 @@
     <!-- Share Experience -->
     <div class="flex rounded-lg items-center space-x-2">
       <input type="text" placeholder="Share Your Experience"
-        class="border rounded-md px-5 py-4 text-sm w-64">
+        class="border rounded-md px-5 py-4 text-sm w-64 h-50">
       <button class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">
         Submit
       </button>
@@ -298,13 +313,27 @@
   </div>
 </div>
 <div class="fixed bottom-6 right-6 mr-4">
-  <button class="bg-blue-100 text-blue-700 px-4 py-2 rounded-full shadow hover:bg-blue-200">
+  <button class="bg-[#8979FF] text-white px-4 py-2 rounded-full shadow hover:bg-blue-200">
     Feedback
   </button>
 </div>
 
+<script>
+  // Select all sidebar links
+  const sidebarLinks = document.querySelectorAll("aside li a");
 
+  sidebarLinks.forEach(link => {
+    link.addEventListener("click", function() {
+      // Remove active state from all
+      sidebarLinks.forEach(l => l.classList.remove("bg-custom-light-purple", "text-custom-purple", "font-semibold"));
+
+      // Add active state to clicked one
+      this.classList.add("bg-custom-light-purple", "text-custom-purple", "font-semibold");
+    });
+  });
+</script>
 
 
 </body>
 </html>
+
