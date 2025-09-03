@@ -13,7 +13,27 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'custom-purple': '#6D5BD0',
+              'custom-light-purple': '#F0EEFF',
+              'custom-background': '#F8F9FE',
+              'custom-gray': '#A0AEC0',
+              'custom-dark-gray': '#4A5568',
+              'custom-light-gray': '#F7FAFC',
+              'custom-green': '#48BB78',
+              'custom-red': '#F56565',
+            },
+            fontFamily: {
+              inter: ['Inter', 'sans-serif'],
+            },
+          }
+        }
+      }
+    </script>
     <!-- Main container with fixed screen height -->
     <div class="flex h-screen">
         <!-- Left Sidebar -->
