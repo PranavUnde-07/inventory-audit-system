@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Report</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/litepicker/dist/css/litepicker.css"/>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow: hidden;
+        }
+         /* Custom scrollbar for webkit browsers */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #d4d4d8;
+            border-radius: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #a1a1aa;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Main container with fixed screen height -->
+    <div class="flex h-screen">
+        <!-- Left Sidebar -->
+        <aside class="w-64 bg-white p-6 flex flex-col justify-between shadow-md">
+            <div>
+                <div class="mb-8 flex items-center justify-center">
+                     <div class="w-10 h-10 bg-gray-200 rounded-lg mr-4"></div>
+                    <h1 class="text-2xl font-bold text-gray-800">D-Mart</h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li class="mb-2">
+                            <a href="#" class="flex items-center p-3 text-gray-600 hover:bg-gray-100 rounded-lg font-medium">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-3"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                                DASHBOARD
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#" class="flex items-center p-3 text-gray-600 hover:bg-gray-100 rounded-lg font-medium">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-3"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path><path d="m3.3 7 8.7 5 8.7-5"></path><path d="M12 22V12"></path></svg>
+                                INVENTORY
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#" class="flex items-center p-3 text-gray-600 hover:bg-gray-100 rounded-lg font-medium">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-3"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect></svg>
+                                BILLING
+                            </a>
+                        </li>
+                         <li class="mb-2">
+                            <a href="#" class="flex items-center p-3 bg-purple-100 text-purple-700 rounded-lg font-semibold">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-3"><path d="M3 3v18h18"></path><path d="M18.7 8a6 6 0 0 0-8.4-8.4"></path><path d="M13 10.5a2.5 2.5 0 0 1-3.5-3.5"></path></svg>
+                                REPORTS
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center p-3 text-gray-600 hover:bg-gray-100 rounded-lg font-medium">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-3"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg>
+                                ABOUT
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="flex items-center">
+                <img src="https://placehold.co/40x40/E2E8F0/4A5568?text=OM" alt="User Avatar" class="rounded-full mr-3" onerror="this.onerror=null;this.src='https://placehold.co/40x40/E2E8F0/4A5568?text=OM';">
+                <div>
+                    <p class="font-semibold">OM KHEBADE</p>
+                    <a href="#" class="text-sm text-gray-500 hover:underline">View Profile</a>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-auto text-gray-500"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 0 2l-.15.08a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l-.22-.38a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1 0-2l.15-.08a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="bg-gray-100 p-8 flex-1 min-w-0 flex flex-col">
+            <!-- Header Section -->
+            <div class="flex-shrink-0 flex justify-between items-center mb-6">
+                <h1 class="text-3xl font-bold text-gray-800">Customer Report</h1>
+                <div class="flex items-center space-x-4">
+                    <button class="flex items-center px-4 py-2 bg-white border border-gray-300 rounded-lg shadow-sm hover:bg-gray-50 font-semibold">
+                        Export
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                    </button>
+                    <button class="px-4 py-2 bg-white border border-gray-300 rounded-lg shadow-sm hover:bg-gray-50 font-semibold">Back</button>
+                    <div class="relative flex items-center bg-white border border-gray-300 rounded-lg shadow-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-600 absolute left-3 z-10 pointer-events-none"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                        <input type="text" id="datepicker" class="w-full text-center pl-10 pr-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 font-medium cursor-pointer">
+                   </div>
+                </div>
+            </div>
+
+            <!-- Customer Report Table -->
+            <div class="bg-white rounded-2xl shadow-lg p-6 flex-grow flex flex-col">
+                <div class="overflow-y-auto custom-scrollbar flex-grow">
+                    <table class="min-w-full">
+                        <thead class="border-b-2 border-gray-200 sticky top-0 bg-white">
+                            <tr>
+                                <th class="px-6 py-3 text-left text-sm font-semibold text-gray-600 tracking-wider">
+                                    <div class="flex items-center">Customer ID <svg class="ml-1 w-4 h-4 text-gray-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7 15 5 5 5-5"/><path d="m7 9 5-5 5 5"/></svg></div>
+                                </th>
+                                <th class="px-6 py-3 text-left text-sm font-semibold text-gray-600 tracking-wider">
+                                    <div class="flex items-center">Customer Name <svg class="ml-1 w-4 h-4 text-gray-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7 15 5 5 5-5"/><path d="m7 9 5-5 5 5"/></svg></div>
+                                </th>
+                                <th class="px-6 py-3 text-left text-sm font-semibold text-gray-600 tracking-wider">
+                                    <div class="flex items-center">Contact No. <svg class="ml-1 w-4 h-4 text-gray-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7 15 5 5 5-5"/><path d="m7 9 5-5 5 5"/></svg></div>
+                                </th>
+                                <th class="px-6 py-3 text-left text-sm font-semibold text-gray-600 tracking-wider">
+                                    <div class="flex items-center">Category <svg class="ml-1 w-4 h-4 text-gray-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7 15 5 5 5-5"/><path d="m7 9 5-5 5 5"/></svg></div>
+                                </th>
+                                <th class="px-6 py-3 text-left text-sm font-semibold text-gray-600 tracking-wider">Orders</th>
+                                <th class="px-6 py-3 text-left text-sm font-semibold text-gray-600 tracking-wider"></th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <!-- JS will populate this -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+<script src="https://cdn.jsdelivr.net/npm/litepicker/dist/litepicker.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const customerData = [
+            { id: '#123456', name: 'Raj Kundra', contact: 'X6985XXXX', category: 'Wholesale' },
+            { id: '#123457', name: 'Priya Singh', contact: 'X5432XXXX', category: 'Retailer' },
+            { id: '#123458', name: 'Amit Patel', contact: 'X9876XXXX', category: 'Hotel-Line' },
+            { id: '#123459', name: 'Sneha Sharma', contact: 'X1234XXXX', category: 'Wholesale' },
+            { id: '#123460', name: 'Vikram Rathore', contact: 'X8765XXXX', category: 'Retailer' },
+            { id: '#123461', name: 'Anjali Mehta', contact: 'X2345XXXX', category: 'Wholesale' },
+            { id: '#123462', name: 'Rohan Joshi', contact: 'X7654XXXX', category: 'Hotel-Line' },
+            { id: '#123463', name: 'Kavita Iyer', contact: 'X3456XXXX', category: 'Retailer' },
+            { id: '#123464', name: 'Suresh Menon', contact: 'X6543XXXX', category: 'Wholesale' },
+            { id: '#123465', name: 'Deepika Nair', contact: 'X4567XXXX', category: 'Retailer' },
+            { id: '#123466', name: 'Arjun Reddy', contact: 'X5678XXXX', category: 'Wholesale' },
+            { id: '#123467', name: 'Meera Desai', contact: 'X0987XXXX', category: 'Hotel-Line' }
+        ];
+
+        const tableBody = document.querySelector('tbody');
+        let tableContent = '';
+        customerData.forEach(customer => {
+            tableContent += `
+                <tr class="hover:bg-gray-50">
+                    <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-800">${customer.id}</td>
+                    <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-800">${customer.name}</td>
+                    <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-800">${customer.contact}</td>
+                    <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-800">${customer.category}</td>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                        <button class="px-4 py-1 text-sm font-semibold text-purple-700 bg-purple-100 rounded-full hover:bg-purple-200">SEE ALL</button>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                        <button class="text-gray-500 hover:text-gray-700">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg>
+                        </button>
+                    </td>
+                </tr>
+            `;
+        });
+        tableBody.innerHTML = tableContent;
+
+        const picker = new Litepicker({
+            element: document.getElementById('datepicker'),
+            singleMode: false,
+            numberOfMonths: 2,
+            numberOfColumns: 2,
+            format: 'DD-MM-YYYY',
+            separator: ' - ',
+            startDate: new Date('2025-05-01'),
+            endDate: new Date('2025-06-01'),
+            setup: (picker) => {
+                picker.on('selected', (date1, date2) => {
+                    // The input value is updated automatically by the library
+                });
+            },
+        });
+    });
+</script>
+
+</body>
+</html>
+
