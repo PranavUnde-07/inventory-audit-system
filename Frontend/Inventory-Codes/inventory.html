@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Inventory</title>
+    <title>D-Mart Inventory</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -20,7 +20,7 @@
         .table-container { overflow-x: auto; }
     </style>
 </head>
-<body class="bg-gray-100 text-gray-800">
+<body class="bg-[#F8F9FE] text-gray-800">
     <div class="flex h-screen">
         <aside class="w-64 bg-white p-6 flex flex-col justify-between">
             <div>
@@ -31,31 +31,31 @@
                 <nav>
                     <ul>
                         <li class="mb-2">
-                            <a href="#" class="flex items-center p-3 hover:bg-gray-100 rounded-lg">
+                            <a href="/dashboard/dashboard.html" class="flex items-center p-3 hover:bg-gray-100 rounded-lg">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-3"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
                                 DASHBOARD
                             </a>
                         </li>
                         <li class="mb-2">
-                            <a href="#" class="flex items-center p-3 font-semibold rounded-lg" style="background-color:#EDEBFB; color:#6D5BD0;">
+                            <a href="/inventory/inventory.html" class="flex items-center p-3 font-semibold rounded-lg" style="background-color:#EDEBFB; color:#6D5BD0;">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#6D5BD0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-3"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path><path d="m3.3 7 8.7 5 8.7-5"></path><path d="M12 22V12"></path></svg>
                                 INVENTORY
                             </a>
                         </li>
                         <li class="mb-2">
-                            <a href="#" class="flex items-center p-3 hover:bg-gray-100 rounded-lg">
+                            <a href="/billing/billing.html" class="flex items-center p-3 hover:bg-gray-100 rounded-lg">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-3"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect></svg>
                                 BILLING
                             </a>
                         </li>
                         <li class="mb-2">
-                            <a href="#" class="flex items-center p-3 hover:bg-gray-100 rounded-lg">
+                            <a href="/report/report.html" class="flex items-center p-3 hover:bg-gray-100 rounded-lg">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-3"><path d="M3 3v18h18"></path><path d="M18.7 8a6 6 0 0 0-8.4-8.4"></path><path d="M13 10.5a2.5 2.5 0 0 1-3.5-3.5"></path></svg>
                                 REPORTS
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="flex items-center p-3 hover:bg-gray-100 rounded-lg">
+                            <a href="/about/about.html" class="flex items-center p-3 hover:bg-gray-100 rounded-lg">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-3"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg>
                                 ABOUT
                             </a>
@@ -64,242 +64,247 @@
                 </nav>
             </div>
 
-            <div class="flex items-center">
+            <a href="/setting/user.profile.html" class="flex items-center p-3 hover:bg-gray-100 rounded-lg">
                 <img src="https://placehold.co/40x40/E2E8F0/4A5568?text=OM" alt="User Avatar" class="rounded-full mr-3">
                 <div>
                     <p class="font-semibold text-gray-700">OM KHEBADE</p>
-                    <a href="#" class="text-sm text-gray-400">View Profile</a>
+                    <p class="text-sm text-gray-400">View Profile</p>
                 </div>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-auto text-gray-500"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 0 2l-.15.08a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l-.22-.38a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1 0-2l.15-.08a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-            </div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-auto text-gray-500">
+                    <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 0 2l-.15.08a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l-.22-.38a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1 0-2l.15-.08a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+            </a>
         </aside>
 
-        <main class="flex-1 p-6 flex flex-col overflow-y-auto bg-[#F8F9FE]">
-            <div id="inventory-view" class="flex-1">
-                <div class="flex items-center gap-3 mb-3">
-                    <h2 class="text-2xl font-bold">Inventory</h2>
-                    <div class="relative">
-                        <input type="text" placeholder="Search product..." class="pl-10 pr-3 py-2 border rounded-md text-sm w-64 focus:outline-none focus:ring-2 focus:ring-indigo-400">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                        </svg>
+        <main class="flex-1 p-6 flex flex-col overflow-hidden">
+            <div id="dashboard-view" class="flex flex-col gap-4 h-full">
+                <div class="rounded-lg shadow p-6 space-y-4" style="background-color:#F8F9FE;">
+                    <div class="flex justify-between items-center">
+                        <h1 class="text-3xl font-bold text-gray-800">Inventory</h1>
                     </div>
-                    
-                    <div class="relative inline-block">
-                       <button onclick="openSortModal()" 
-                            class="px-3 py-2 bg-white text-gray-600 border border-gray-600 rounded hover:bg-gray-100">
-                            Sort by
-                        </button>
-                        <div id="sortModal" class="absolute top-full left-0 mt-2 bg-white rounded-2xl shadow-lg p-6 w-[500px] hidden z-50">
-                            <div class="flex justify-between items-center mb-4">
-                                <h2 class="text-xl font-bold">Sort Inventory</h2>
-                                <button onclick="closeSortModal()" class="text-gray-500 text-2xl font-bold hover:text-red-500">✕</button>
+
+                    <div class="flex justify-between items-center">
+                        <div class="relative">
+                            <input type="text" placeholder="Search product..." 
+                                   class="pl-10 pr-3 py-2 border rounded-md text-sm w-72 focus:outline-none focus:ring-2 focus:ring-indigo-400">
+                            <svg xmlns="http://www.w3.org/2000/svg" 
+                                 class="h-4 w-4 absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" 
+                                 fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" 
+                                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                            </svg>
+                        </div>
+
+                        <div class="flex items-center gap-3">
+                            <div class="relative inline-block">
+                                <button onclick="openSortModal()" 
+                                        class="px-4 py-2 bg-white text-gray-700 border border-gray-300 rounded-lg shadow-sm hover:bg-gray-100 font-medium">
+                                    Sort By
+                                </button>
                             </div>
-                            
-                            <div id="sortContainer" class="space-y-4 mb-4">
-                                <div class="flex items-center gap-3">
-                                    <span class="cursor-move text-gray-400">⋮⋮</span>
-                                    <select class="border rounded p-2 flex-1">
-                                        <option>Price</option>
-                                        <option>Stock</option>
-                                        <option>Name</option>
-                                        <option>Category</option>
-                                    </select>
-                                    <button class="px-3 py-1 border rounded bg-gray-100 hover:bg-gray-200">Asc</button>
-                                    <button class="px-3 py-1 border rounded bg-gray-100 hover:bg-gray-200">Desc</button>
-                                    <button onclick="removeSort(this)" class="text-xl text-gray-500 hover:text-red-500">✕</button>
+
+                            <div id="sortModal" class="fixed inset-0 flex items-start justify-center bg-black bg-opacity-30 hidden z-50">
+                                <div class="bg-white rounded-2xl shadow-lg p-6 w-[500px] mt-24">
+                                    <div class="flex justify-between items-center mb-4">
+                                        <h2 class="text-xl font-bold">Sort Inventory</h2>
+                                        <button onclick="closeSortModal()" 
+                                                class="text-gray-500 text-2xl font-bold hover:text-red-500">✕</button>
+                                    </div>
+                                    <div id="sortContainer" class="space-y-4 mb-4">
+                                        <div class="flex items-center gap-3">
+                                            <span class="cursor-move text-gray-400">⋮⋮</span>
+                                            <select class="border rounded p-2 flex-1">
+                                                <option>Price</option>
+                                                <option>Stock</option>
+                                                <option>Name</option>
+                                                <option>Category</option>
+                                            </select>
+                                            <button class="px-3 py-1 border rounded bg-gray-100 hover:bg-gray-200">Asc</button>
+                                            <button class="px-3 py-1 border rounded bg-gray-100 hover:bg-gray-200">Desc</button>
+                                        </div>
+                                    </div>
+                                    <div class="flex justify-between mt-4">
+                                    </div>
                                 </div>
-                            </div>
-                            
-                            <div class="flex justify-between mt-4">
-                                <button onclick="addSort()" class="flex items-center gap-1 text-black font-semibold hover:text-blue-600">
-                                    ➕ Add Sort
-                                </button>
-                                <button onclick="deleteAllSorts()" class="flex items-center gap-1 text-red-600 font-semibold hover:text-red-700">
-                                    🗑️ Clear All
-                                </button>
-                            </div>
+                            </div>                          
+                            <button id="addProductBtn" 
+                                    class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 font-semibold">
+                                + New Product
+                            </button>
                         </div>
                     </div>
-                    <button id="addProductBtn" class="bg-green-600 text-white px-3 py-2 rounded hover:bg-green-700">+ New Product</button>
-                </div>
-
-                <div class="flex items-center gap-2 mb-6">
-                    <span class="text-sm text-gray-500 font-black">Actions:</span>
-                 <button id="editProductBtn" 
-                        class="px-3 py-1 rounded text-white transition-colors duration-200 flex items-center gap-1" 
-                        style="background-color: #C2B8FF;"
-                        onmouseover="this.style.backgroundColor='#A89EFF'" 
-                        onmouseout="this.style.backgroundColor='#C2B8FF'">
-                        <span class="text-gray-800">✏️</span> Edit
-                    </button>
-
-                    <button onclick="openDeleteModal()" 
-                        class="px-3 py-1 rounded text-white transition-colors duration-200 flex items-center gap-1" 
-                        style="background-color: #C2B8FF;"
-                        onmouseover="this.style.backgroundColor='#A89EFF'" 
-                        onmouseout="this.style.backgroundColor='#C2B8FF'">
-                        <span class="text-gray-800">🗑️</span> Delete
-                    </button>
-                </div>
-
-                <div class="table-container bg-white rounded-lg shadow-md overflow-hidden">
-                    <table>
-                        <thead>
-                            <tr class="bg-purple-900 text-white">
-                                <th class="px-4 py-2 text-sm"></th>
-                                <th class="px-4 py-2 text-sm">Product ID</th>
-                                <th class="px-4 py-2 text-sm">Brand Name</th>
-                                <th class="px-4 py-2 text-sm">Product Name</th>
-                                <th class="px-4 py-2 text-sm">Stocks</th>
-                                <th class="px-4 py-2 text-sm">MRP</th>
-                                <th class="px-4 py-2 text-sm">Buy Rate</th>
-                                <th class="px-4 py-2 text-sm">Wholesale Rate</th>
-                                <th class="px-4 py-2 text-sm">Retailer Rate</th>
-                                <th class="px-4 py-2 text-sm">Hotel Rate</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr><td><input type="checkbox"></td><td>#101</td><td>Harpic</td><td><div class="flex items-center gap-2"><img src="https://tse4.mm.bing.net/th/id/OIP.GHn79V43Sf-rTb7WdngOdQHaHa?pid=Api&P=0&h=180" class="w-6 h-6 rounded"> Harpic</div></td><td>64</td><td>₹49</td><td>₹39</td><td>₹29</td><td>₹35</td><td>₹32</td></tr>
-                            <tr><td><input type="checkbox"></td><td>#102</td><td>Sprite</td><td><div class="flex items-center gap-2"><img src="https://tse1.mm.bing.net/th/id/OIP.N8PHNixsxvbUaJjUPqC7ogHaHa?pid=Api&P=0&h=180" class="w-6 h-6 rounded">Sprite</div></td><td>24</td><td>₹99</td><td>₹80</td><td>₹70</td><td>₹75</td><td>₹72</td></tr>
-                            <tr><td><input type="checkbox"></td><td>#103</td><td>Coffee</td><td><div class="flex items-center gap-2"><img src="https://tse2.mm.bing.net/th/id/OIP.JTG1_rnjVM7v2iMA9Rz6MwHaHa?pid=Api&P=0&h=180" class="w-6 h-6 rounded"> Coffee</div></td><td>10</td><td>₹15</td><td>₹19</td><td>₹12</td><td>₹11</td><td>₹12</td></tr>
-                            <tr><td><input type="checkbox"></td><td>#104</td><td>Coca Cola</td><td><div class="flex items-center gap-2"><img src="https://tse4.mm.bing.net/th/id/OIP.gOSWD16OMZ6vAMmKT8ltUwHaHa?pid=Api&P=0&h=180" class="w-6 h-6 rounded"> Coca Cola</div></td><td>99</td><td>₹41</td><td>₹35</td><td>₹30</td><td>₹33</td><td>₹31</td></tr>
-                            <tr><td><input type="checkbox"></td><td>#105</td><td>Tea Powder</td><td><div class="flex items-center gap-2"><img src="https://tse3.mm.bing.net/th/id/OIP.KOW_HgZ63jX0Sr64saUB3gHaHa?pid=Api&P=0&h=180" class="w-6 h-6 rounded"> Tea Powder</div></td><td>68</td><td>₹68</td><td>₹60</td><td>₹55</td><td>₹58</td><td>₹56</td></tr>
-                            <tr><td><input type="checkbox"></td><td>#106</td><td>Dairy Milk</td><td><div class="flex items-center gap-2"><img src="https://tse3.mm.bing.net/th/id/OIP.ZUktNr4TbMEsqzJ62haeSgHaHa?pid=Api&P=0&h=180" class="w-6 h-6 rounded"> Dairy Milk</div></td><td>65</td><td>₹19</td><td>₹15</td><td>₹14</td><td>₹15</td><td>₹14</td></tr>
-                            <tr><td><input type="checkbox"></td><td>#107</td><td>Lays</td><td><div class="flex items-center gap-2"><img src="https://tse1.mm.bing.net/th/id/OIP.gDUD6TxjrGo_vA_GpD_RnQHaHa?pid=Api&P=0&h=180" class="w-6 h-6 rounded">Lays</div></td><td>45</td><td>₹19</td><td>₹15</td><td>₹14</td><td>₹15</td><td>₹14</td></tr>
-                            <tr><td><input type="checkbox"></td><td>#108</td><td>Dettol</td><td><div class="flex items-center gap-2"><img src="https://tse1.mm.bing.net/th/id/OIP.IkaR4FaCrgbcjCVGZ5PSbQHaHa?pid=Api&P=0&h=180" class="w-6 h-6 rounded"> Dettol</div></td><td>56</td><td>₹49</td><td>₹39</td><td>₹32</td><td>₹35</td><td>₹30</td></tr>
-                            <tr><td><input type="checkbox"></td><td>#109</td><td>Maggi</td><td><div class="flex items-center gap-2"><img src="https://tse1.mm.bing.net/th/id/OIP.EKDEFAGNO4RlSybaAfXpZQHaKC?pid=Api&P=0&h=180" class="w-6 h-6 rounded">Maggi</div></td><td>49</td><td>₹49</td><td>₹39</td><td>₹29</td><td>₹35</td><td>₹30</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <div class="pagination mt-4 flex justify-center gap-2">
-                    <button class="prev-btn px-3 py-1 rounded border">Next</button>
-                    <div class="page-numbers flex items-center gap-1">
-                        <span class="px-2 py-1 bg-indigo-500 text-white rounded">1</span>
-                        <span class="px-2 py-1 rounded hover:bg-gray-200 cursor-pointer">2</span>
-                        <span class="px-2 py-1 rounded hover:bg-gray-200 cursor-pointer">3</span>
-                        <span class="px-2 py-1 rounded hover:bg-gray-200 cursor-pointer">4</span>
-                        <span class="px-2 py-1 rounded hover:bg-gray-200 cursor-pointer">5</span>
+                    
+                    <div class="flex items-center gap-2">
+                        <span class="text-sm text-gray-600 font-bold">Actions:</span>
+                        
+                        <!-- Edit Button -->
+                        <button id="editProductBtn" 
+                                class="px-4 py-1 text-white font-bold rounded hover:opacity-80"
+                                style="background-color:#8b5cf6;">
+                         Edit
+                        </button>
+                        
+                        <!-- Delete Button -->
+                        <button onclick="openDeleteModal()" 
+                                class="px-4 py-1 text-white font-bold rounded hover:opacity-80"
+                                style="background-color:#8b5cf6">
+                            Delete
+                        </button>
+                    </div> 
+                    
+                     <div class="table-container bg-white rounded-lg shadow-md overflow-hidden">
+                        <table>
+                            <thead>
+                                <tr class="bg-purple-900 text-white">
+                                    <th class="px-4 py-2 text-sm"></th>
+                                     <th class="px-4 py-2 text-center">Product ID</th>
+                                    <th class="px-4 py-2 text-center">Brand Name</th>
+                                    <th class="px-4 py-2 text-center">Product Name</th>
+                                    <th class="px-4 py-2 text-center">Stocks</th>
+                                    <th class="px-4 py-2 text-center">MRP</th>
+                                    <th class="px-4 py-2 text-center">Buy Rate</th>
+                                    <th class="px-4 py-2 text-center">Wholesale Rate</th>
+                                    <th class="px-4 py-2 text-center">Retailer Rate</th>
+                                    <th class="px-4 py-2 text-center">Hotel Rate</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><input type="checkbox"></td><td class="px-4 py-2 text-center">#101</td><td class="px-4 py-2 text-center">Harpic</td><td><div class="px-4 py-2 text-center">Harpic</div></td><td class="px-4 py-2 text-center">64</td><td>₹49</td><td class="px-4 py-2 text-center">₹39</td><td class="px-4 py-2 text-center">₹29</td><td class="px-4 py-2 text-center">₹35</td><td class="px-4 py-2 text-center">₹32</td></tr>
+                                <tr><td><input type="checkbox"></td><td class="px-4 py-2 text-center">#102</td><td class="px-4 py-2 text-center">Sprite</td><td><div class="px-4 py-2 text-center">Sprite</div></td><td class="px-4 py-2 text-center">24</td><td>₹99</td><td class="px-4 py-2 text-center">₹80</td><td class="px-4 py-2 text-center">₹70</td><td class="px-4 py-2 text-center">₹75</td><td class="px-4 py-2 text-center">₹72</td></tr>
+                                <tr><td><input type="checkbox"></td><td class="px-4 py-2 text-center">#103</td><td class="px-4 py-2 text-center">Coffee</td><td><div class="px-4 py-2 text-center">Coffee</div></td><td class="px-4 py-2 text-center">10</td><td>₹15</td><td class="px-4 py-2 text-center">₹19</td><td class="px-4 py-2 text-center">₹12</td><td class="px-4 py-2 text-center">₹11</td><td class="px-4 py-2 text-center">₹12</td></tr>
+                                <tr><td><input type="checkbox"></td><td class="px-4 py-2 text-center">#104</td><td class="px-4 py-2 text-center">Coca Cola</td><td><div class="px-4 py-2 text-center">Coca Cola</div></td><td class="px-4 py-2 text-center">99</td><td>₹41</td><td class="px-4 py-2 text-center">₹35</td><td class="px-4 py-2 text-center">₹30</td><td class="px-4 py-2 text-center">₹33</td><td class="px-4 py-2 text-center">₹31</td></tr>
+                                <tr><td><input type="checkbox"></td><td class="px-4 py-2 text-center">#105</td><td class="px-4 py-2 text-center">Tea Powder</td><td><div class="px-4 py-2 text-center">Tea Powder</div></td><td class="px-4 py-2 text-center">68</td><td>₹68</td><td class="px-4 py-2 text-center">₹60</td><td class="px-4 py-2 text-center">₹55</td><td class="px-4 py-2 text-center">₹58</td><td class="px-4 py-2 text-center">₹56</td></tr>
+                                <tr><td><input type="checkbox"></td><td class="px-4 py-2 text-center">#106</td><td class="px-4 py-2 text-center">Dairy Milk</td><td><div class="px-4 py-2 text-center">Dairy Milk</div></td><td class="px-4 py-2 text-center">65</td><td>₹19</td><td class="px-4 py-2 text-center">₹15</td><td class="px-4 py-2 text-center">₹14</td><td class="px-4 py-2 text-center">₹15</td><td class="px-4 py-2 text-center">₹14</td></tr>
+                                <tr><td><input type="checkbox"></td><td class="px-4 py-2 text-center">#107</td><td class="px-4 py-2 text-center">Lays</td><td><div class="px-4 py-2 text-center">Lays</div></td><td class="px-4 py-2 text-center">45</td><td>₹19</td><td class="px-4 py-2 text-center">₹15</td><td class="px-4 py-2 text-center">₹14</td><td class="px-4 py-2 text-center">₹15</td><td class="px-4 py-2 text-center">₹14</td></tr>
+                                <tr><td><input type="checkbox"></td><td class="px-4 py-2 text-center">#108</td><td class="px-4 py-2 text-center">Dettol</td><td><div class="px-4 py-2 text-center">Dettol</div></td><td class="px-4 py-2 text-center">56</td><td>₹49</td><td class="px-4 py-2 text-center">₹39</td><td class="px-4 py-2 text-center">₹32</td><td class="px-4 py-2 text-center">₹35</td><td class="px-4 py-2 text-center">₹30</td></tr>
+                                <tr><td><input type="checkbox"></td><td class="px-4 py-2 text-center">#109</td><td class="px-4 py-2 text-center">Maggi</td><td><div class="px-4 py-2 text-center">Maggi</div></td><td class="px-4 py-2 text-center">49</td><td>₹49</td><td class="px-4 py-2 text-center">₹39</td><td class="px-4 py-2 text-center">₹29</td><td class="px-4 py-2 text-center">₹35</td><td class="px-4 py-2 text-center">₹30</td></tr>
+                            </tbody>
+                        </table>
                     </div>
-                    <button class="next-btn px-3 py-1 rounded border">Previous</button>
+
+                    <div class="pagination mt-4 flex justify-center gap-2">
+                        <button class="prev-btn px-3 py-1 rounded border">Next</button>
+                        <div class="page-numbers flex items-center gap-1">
+                            <span class="px-2 py-1 bg-indigo-500 text-white rounded">1</span>
+                            <span class="px-2 py-1 rounded hover:bg-gray-200 cursor-pointer">2</span>
+                            <span class="px-2 py-1 rounded hover:bg-gray-200 cursor-pointer">3</span>
+                            <span class="px-2 py-1 rounded hover:bg-gray-200 cursor-pointer">4</span>
+                            <span class="px-2 py-1 rounded hover:bg-gray-200 cursor-pointer">5</span>
+                        </div>
+                        <button class="next-btn px-3 py-1 rounded border">Previous</button>
+                    </div>
                 </div>
             </div>
 
             <div id="add-product-view" class="flex-1 bg-purple-100 p-6 rounded-lg shadow hidden">
-                <div class="flex justify-between items-start mb-6">
-                    <h2 class="text-lg font-semibold text-gray-800">➕ Add New Product</h2>
-                    <div class="flex gap-4">
-                        <button id="cancelBtn" class="px-4 py-2 rounded bg-white text-black hover:bg-gray-200">Cancel</button>
-                        <button onclick="confirmAddProduct()" class="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 flex items-center gap-1">✔ Add Product</button>
-                    </div>
-                </div>
-
-                <div class="flex gap-6">
-                    <div class="flex-1 space-y-6">
-                        <div class="bg-white p-4 rounded-lg shadow-sm">
-                            <h3 class="text-base font-semibold mb-4">Product Information</h3>
-                            <div class="grid grid-cols-2 gap-4 mb-4">
-                                <div>
-                                    <label class="block text-sm font-medium mb-1">Product ID</label>
-                                    <input type="text" value="#100041" class="p-2 rounded border border-gray-300 w-full" />
-                                </div>
-                                <div>
-                                    <label class="block text-sm font-medium mb-1">Brand Name</label>
-                                    <input type="text" value="Apple" class="w-full p-2 rounded border border-gray-300" />
-                                </div>
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium mb-1">Product Name</label>
-                                <input type="text" value="Macbook Air M4 (16-512) GB" class="w-full p-2 rounded border border-gray-300" />
-                            </div>
-                        </div>
-
-                        <div class="bg-white p-4 rounded-lg shadow-sm">
-                            <h3 class="text-base font-semibold mb-6">Product And Stock</h3>
-                            <div class="grid grid-cols-2 gap-4">
-                                <div>
-                                    <label class="block text-sm font-medium mb-1">Buy Rate</label>
-                                    <input type="text" value="₹300" class="w-full p-2 rounded border border-gray-300" />
-                                </div>
-                                <div>
-                                    <label class="block text-sm font-medium mb-1">MRP</label>
-                                    <input type="text" value="₹700" class="w-full p-2 rounded border border-gray-300" />
-                                </div>
-                                <div>
-                                    <label class="block text-sm font-medium mb-1">Retail Price</label>
-                                    <input type="text" value="₹599" class="w-full p-2 rounded border border-gray-300" />
-                                </div>
-                                <div>
-                                    <label class="block text-sm font-medium mb-1">Wholesale Price</label>
-                                    <input type="text" value="₹499" class="w-full p-2 rounded border border-gray-300" />
-                                </div>
-                                <div>
-                                    <label class="block text-sm font-medium mb-1">Hotel Price</label>
-                                    <input type="text" value="₹549" class="w-full p-2 rounded border border-gray-300" />
-                                </div>
-                                <div>
-                                    <label class="block text-sm font-medium mb-1">Stocks</label>
-                                    <input type="text" value="400" class="w-full p-2 rounded border border-gray-300" />
-                                </div>
-                            </div>
+                <form id="addProductForm" action="/your-backend-endpoint" method="post">
+                    <div class="flex justify-between items-start mb-6">
+                        <h2 class="text-lg font-semibold text-gray-800">➕ Add New Product</h2>
+                        <div class="flex gap-4">
+                            <button id="cancelBtn" class="px-4 py-2 rounded bg-white text-black hover:bg-gray-200" type="button">Cancel</button>
+                            <button type="submit" class="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 flex items-center gap-1">✔ Add Product</button>
                         </div>
                     </div>
 
-                    <div class="space-y-6">
-                        <div class="bg-white p-4 rounded-lg shadow-sm">
-                            <h3 class="text-base font-semibold mb-4">Upload Img</h3>
-                            <div class="mb-4">
-                                <input type="file" id="fileInput" class="hidden">
-                                <label for="fileInput" class="px-4 py-2 border rounded-md cursor-pointer hover:bg-gray-100">Choose File</label>
-                                <span id="fileName" class="text-sm text-gray-500 ml-2">No file chosen</span>
+                    <div class="flex gap-6">
+                        <div class="flex-1 space-y-6">
+                            <div class="bg-white p-4 rounded-lg shadow-sm">
+                                <h3 class="text-base font-semibold mb-4">Product Information</h3>
+                                <div class="grid grid-cols-2 gap-4 mb-4">
+                                    <div>
+                                        <label class="block text-sm font-medium mb-1">Product ID</label>
+                                        <input type="text" value="#100041" class="p-2 rounded border border-gray-300 w-full" name="product_id" />
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium mb-1">Brand Name</label>
+                                        <input type="text" value="Apple" class="w-full p-2 rounded border border-gray-300" name="brand_name" />
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium mb-1">Product Name</label>
+                                    <input type="text" value="Macbook Air M4 (16-512) GB" class="w-full p-2 rounded border border-gray-300" name="product_name" />
+                                </div>
                             </div>
-                            <div class="h-48 w-48 bg-gray-200 rounded-lg flex items-center justify-center overflow-hidden">
-                                <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mba15-midnight-gallery1-202306" alt="Product Image" class="w-full h-full object-cover">
+
+                            <div class="bg-white p-4 rounded-lg shadow-sm">
+                                <h3 class="text-base font-semibold mb-6">Product And Stock</h3>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-sm font-medium mb-1">Buy Rate</label>
+                                        <input type="text" value="₹300" class="w-full p-2 rounded border border-gray-300" name="buy_rate" />
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium mb-1">MRP</label>
+                                        <input type="text" value="₹700" class="w-full p-2 rounded border border-gray-300" name="mrp" />
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium mb-1">Retail Price</label>
+                                        <input type="text" value="₹599" class="w-full p-2 rounded border border-gray-300" name="retail_price" />
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium mb-1">Wholesale Price</label>
+                                        <input type="text" value="₹499" class="w-full p-2 rounded border border-gray-300" name="wholesale_price" />
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium mb-1">Hotel Price</label>
+                                        <input type="text" value="₹549" class="w-full p-2 rounded border border-gray-300" name="hotel_price" />
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium mb-1">Stocks</label>
+                                        <input type="text" value="400" class="w-full p-2 rounded border border-gray-300" name="stocks" />
+                                    </div>
+                                </div>
                             </div>
-                            <p class="text-xs text-gray-400 mt-2">Note: Image must be .gif, .png, .jpg</p>
                         </div>
 
+                        <div class="space-y-6">
+                            <div class="bg-white p-4 rounded-lg shadow-sm">
+      
+
+
                         <div class="bg-white p-4 rounded-lg shadow-sm">
-                            <h3 class="text-base font-semibold mb-4">Category</h3>
-                            <div class="mb-4">
-                                <label class="block text-sm font-medium mb-1">Product Category</label>
-                                <select class="w-full p-2 rounded border border-gray-300">
-                                    <option>Electronics</option>
-                                    <option>Home Goods</option>
-                                    <option>Groceries</option>
-                                </select>
-                            </div>
-                            <button class="w-full px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700">Add Category</button>
+                        <h3 class="text-base font-semibold mb-4">Category</h3>
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium mb-1">Product Category</label>
+                            <select id="category-dropdown" class="w-full p-2 rounded border border-gray-300" name="category">
+                                <option>Electronics</option>
+                                <option>Home Goods</option>
+                                <option>Groceries</option>
+                            </select>
                         </div>
+                        <div class="mb-4">
+                            <label for="custom-category-input" class="block text-sm font-medium mb-1">Add New Category</label>
+                            <div class="flex">
+                                <input type="text" id="custom-category-input" class="w-full p-2 rounded-l border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="e.g., Apparel">
+                            </div>
+                        </div>
+                         <button id="add-category-btn" class="w-full px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700" type="button">Add Category</button>
                     </div>
-                </div>
+
+                    </div>
+                </form>
             </div>
         </main>
 
-        <aside class="w-80 bg-[#F7FAFC] p-4 flex flex-col gap-4 overflow-y-auto h-screen sticky top-0">
+        <aside class="w-88 bg-[#F7FAFC] p-4 flex flex-col gap-4 overflow-y-auto h-screen sticky top-0">
             <h2 class="text-xl font-bold text-gray-800">Summary</h2>
 
-        <div class="bg-white p-4 rounded-lg shadow-sm">
-            <h3 class="font-semibold text-base">Inventory value</h3>
-            <div class="flex items-baseline mb-2">
-                <p class="text-2xl font-bold text-gray-800">₹25,700</p>
-                <span class="text-green-600 font-semibold ml-2 text-xs">(+4%)</span>
-            </div>
-
-            <div class="flex justify-between text-xs">
-                <!-- Green Value -->
-                <div class="flex items-center text-green-600">
-                <span>₹2000</span>
+            <div class="bg-white p-4 rounded-lg shadow-sm">
+                <h3 class="font-semibold text-base">Inventory value</h3>
+                <div class="flex items-baseline mb-2">
+                    <p class="text-2xl font-bold text-gray-800">₹25,700</p>
+                    <span class="text-green-600 font-semibold ml-2 text-xs">(+4%)</span>
                 </div>
-
-                <!-- Red Value -->
-                <div class="flex items-center text-red-600">
-                <span>₹1000</span>
+                <div class="flex justify-between text-xs">
+                    <div class="flex items-center text-green-600">
+                        <span>₹2000</span>
+                    </div>
+                    <div class="flex items-center text-red-600">
+                        <span>₹1000</span>
+                    </div>
                 </div>
             </div>
-            </div>
-
 
             <div id="lowStockSummary" class="bg-white p-4 rounded-lg shadow-sm">
                 <div class="flex justify-between items-center mb-2">
@@ -309,28 +314,24 @@
                 <ul class="space-y-2">
                     <li class="flex items-center justify-between text-sm">
                         <div class="flex items-center">
-                            <img src="https://tse4.mm.bing.net/th/id/OIP.GHn79V43Sf-rTb7WdngOdQHaHa?pid=Api&P=0&h=180" class="w-6 h-6 rounded mr-2">
                             <span>Harpic</span>
                         </div>
                         <div class="text-right text-orange-500 text-xs font-semibold">24 Units</div>
                     </li>
                     <li class="flex items-center justify-between text-sm">
                         <div class="flex items-center">
-                            <img src="https://tse3.mm.bing.net/th/id/OIP.ZUktNr4TbMEsqzJ62haeSgHaHa?pid=Api&P=0&h=180" class="w-6 h-6 rounded mr-2">
                             <span>Dairy Milk</span>
                         </div>
                         <div class="text-right text-orange-500 text-xs font-semibold">07 Units</div>
                     </li>
                     <li class="flex items-center justify-between text-sm">
                         <div class="flex items-center">
-                            <img src="https://tse1.mm.bing.net/th/id/OIP.IkaR4FaCrgbcjCVGZ5PSbQHaHa?pid=Api&P=0&h=180" alt="Dettol" class="w-6 h-6 rounded mr-2">
                             <span>Dettol</span>
                         </div>
                         <div class="text-right text-orange-500 text-xs font-semibold">09 Units</div>
                     </li>
                     <li class="flex items-center justify-between text-sm">
                         <div class="flex items-center">
-                            <img src="https://tse1.mm.bing.net/th/id/OIP.EKDEFAGNO4RlSybaAfXpZQHaKC?pid=Api&P=0&h=180" alt="Maggi" class="w-6 h-6 rounded mr-2">
                             <span>Maggi</span>
                         </div>
                         <div class="text-right text-orange-500 text-xs font-semibold">15 Units</div>
@@ -346,104 +347,104 @@
                 <ul class="space-y-3 text-sm">
                     <li class="flex items-center justify-between">
                         <div class="flex items-center gap-2">
-                            <img src="https://tse4.mm.bing.net/th/id/OIP.GHn79V43Sf-rTb7WdngOdQHaHa?pid=Api&P=0&h=180" class="w-8 h-8 rounded-md border">
                             <span class="font-medium">Harpic</span>
                         </div>
                         <span class="text-orange-500 font-semibold">24 Units</span>
                     </li>
                     <li class="flex items-center justify-between">
                         <div class="flex items-center gap-2">
-                            <img src="https://tse3.mm.bing.net/th/id/OIP.qh2TcKT1Da4vpH558ptAiwHaHa?pid=Api&P=0&h=180" class="w-8 h-8 rounded-md border">
                             <span class="font-medium">Coffee</span>
                         </div>
                         <span class="text-orange-500 font-semibold">26 Units</span>
                     </li>
                     <li class="flex items-center justify-between">
                         <div class="flex items-center gap-2">
-                            <img src="https://tse3.mm.bing.net/th/id/OIP.sPOvvaQH_Gr54R-65jYYPAHaHa?pid=Api&P=0&h=180" class="w-8 h-8 rounded-md border">
                             <span class="font-medium">Lays</span>
                         </div>
                         <span class="text-orange-500 font-semibold">21 Units</span>
                     </li>
                     <li class="flex items-center justify-between">
                         <div class="flex items-center gap-2">
-                            <img src="https://tse1.mm.bing.net/th/id/OIP.dl3hvTvGJf3hc9okhQltuwHaHa?pid=Api&P=0&h=180" class="w-8 h-8 rounded-md border">
                             <span class="font-medium">Sprite</span>
                         </div>
                         <span class="text-orange-500 font-semibold">22 Units</span>
                     </li>
                     <li class="flex items-center justify-between">
                         <div class="flex items-center gap-2">
-                            <img src="https://tse1.mm.bing.net/th/id/OIP.y7Mdj985Sj5276N_jSJLAQHaHa?pid=Api&P=0&h=180" class="w-8 h-8 rounded-md border">
                             <span class="font-medium">Coca Cola</span>
                         </div>
                         <span class="text-orange-500 font-semibold">27 Units</span>
                     </li>
                     <li class="flex items-center justify-between">
                         <div class="flex items-center gap-2">
-                            <img src="https://tse3.mm.bing.net/th/id/OIP.KOW_HgZ63jX0Sr64saUB3gHaHa?pid=Api&P=0&h=180" class="w-8 h-8 rounded-md border">
                             <span class="font-medium">Tea Powder</span>
                         </div>
                         <span class="text-orange-500 font-semibold">19 Units</span>
                     </li>
                     <li class="flex items-center justify-between">
                         <div class="flex items-center gap-2">
-                            <img src="https://tse1.mm.bing.net/th/id/OIP.IkaR4FaCrgbcjCVGZ5PSbQHaHa?pid=Api&P=0&h=180" class="w-8 h-8 rounded-md border">
                             <span class="font-medium">Dettol</span>
                         </div>
                         <span class="text-orange-500 font-semibold">18 Units</span>
                     </li>
                     <li class="flex items-center justify-between">
                         <div class="flex items-center gap-2">
-                            <img src="https://tse3.mm.bing.net/th/id/OIP.c-mZHHCFn0dK5mP8KfvGvwHaHa?pid=Api&P=0&h=180" class="w-8 h-8 rounded-md border">
                             <span class="font-medium">Maggi</span>
                         </div>
                         <span class="text-orange-500 font-semibold">25 Units</span>
                     </li>
                     <li class="flex items-center justify-between">
                         <div class="flex items-center gap-2">
-                            <img src="https://tse4.mm.bing.net/th/id/OIP.l2GGoh-V-R_G4W9iPWpqfQHaHa?pid=Api&P=0&h=180" class="w-8 h-8 rounded-md border">
                             <span class="font-medium">Paneer Masala</span>
                         </div>
                         <span class="text-orange-500 font-semibold">17 Units</span>
                     </li>
                     <li class="flex items-center justify-between">
                         <div class="flex items-center gap-2">
-                            <img src="https://tse4.mm.bing.net/th/id/OIP.Qniw3n88HKbVdNSZ45yxfAHaHa?pid=Api&P=0&h=180" class="w-8 h-8 rounded-md border">
                             <span class="font-medium">Amul Shrikhand</span>
                         </div>
                         <span class="text-orange-500 font-semibold">23 Units</span>
                     </li>
                     <li class="flex items-center justify-between">
                         <div class="flex items-center gap-2">
-                            <img src="https://tse2.mm.bing.net/th/id/OIP.IszlZS71IM4jqcknvXgLwAHaHa?pid=Api&P=0&h=180" class="w-8 h-8 rounded-md border">
                             <span class="font-medium">Chicken Masala</span>
                         </div>
                         <span class="text-orange-500 font-semibold">28 Units</span>
                     </li>
+                    <li class="flex items-center justify-between">
+                        <div class="flex items-center gap-2">
+                            <span class="font-medium">Dahi</span>
+                        </div>
+                        <span class="text-orange-500 font-semibold">20 Units</span>
+                    </li>
+                    <li class="flex items-center justify-between">
+                        <div class="flex items-center gap-2">
+                            <span class="font-medium">Jam</span>
+                        </div>
+                        <span class="text-orange-500 font-semibold">22 Units</span>
+                    </li>
+                    <li class="flex items-center justify-between">
+                        <div class="flex items-center gap-2">
+                            <span class="font-medium">Clinic plus</span>
+                        </div>
+                        <span class="text-orange-500 font-semibold">19 Units</span>
+                    </li>
+                    <li class="flex items-center justify-between">
+                        <div class="flex items-center gap-2">
+                            <span class="font-medium">Santoor</span>
+                        </div>
+                        <span class="text-orange-500 font-semibold">20 Units</span>
+                    </li>
                 </ul>
-            </div>
+            </div> 
             
-            <div class="bg-white p-4 rounded-lg shadow-sm">
-                <h3 class="font-semibold text-base mb-2">Category</h3>
-                <div class="w-full h-48 flex items-center justify-center">
-                    <canvas id="categoryChart"></canvas>
-                </div>
-                <div class="flex justify-between items-center text-sm mt-4">
-                    <div class="flex items-center">
-                        <span class="inline-block w-3 h-3 rounded-full mr-2" style="background-color: #8b5cf6;"></span>
-                        <span>Snacks</span>
-                    </div>
-                    <div class="flex items-center">
-                        <span class="inline-block w-3 h-3 rounded-full mr-2" style="background-color: #d1d5db;"></span>
-                        <span>Liquid</span>
-                    </div>
-                    <div class="flex items-center">
-                        <span class="inline-block w-3 h-3 rounded-full mr-2" style="background-color: #22d3ee;"></span>
-                        <span>Beverages</span>
-                    </div>
-                </div>
+            <!-- Category Chart -->
+            <div class="bg-white p-4 rounded-2xl shadow-lg">
+              <h2 class="text-lg font-bold mb-2 border-b pb-1">Category</h2>
+              <canvas id="categoryChart" class="w-full h-64"></canvas>
             </div>
+           
+
         </aside>
     </div>
 
@@ -452,9 +453,7 @@
             <button onclick="closeSuccessModal()" class="absolute top-2 right-2 text-white bg-red-600 w-7 h-7 rounded-full text-lg font-bold flex items-center justify-center hover:bg-red-700">
                 ✕
             </button>
-
             <h2 class="text-xl font-bold mb-4">Product Added Successfully !!</h2>
-
             <div class="flex justify-center">
                 <div class="w-20 h-20 rounded-full bg-green-500 flex items-center justify-center">
                     <span class="text-white text-4xl font-bold">✓</span>
@@ -464,55 +463,96 @@
     </div>
 
     <div id="editProductModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
-        <form class="bg-white rounded-lg shadow-lg w-[700px] p-6 relative">
-            <button type="button" onclick="closeEditModal()" class="absolute top-2 right-2 text-white bg-red-500 hover:bg-red-600 rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">×</button>
-
-            <h2 class="text-lg font-bold mb-4 flex items-center gap-2">✏️ Edit Product</h2>
-
+    <form class="bg-white rounded-lg shadow-lg w-[750px] p-6 relative" action="/your-backend-edit-endpoint" method="post">
+        <button type="button" onclick="closeEditModal()" 
+            class="absolute top-2 right-2 text-white bg-red-500 hover:bg-red-600 rounded-full w-7 h-7 flex items-center justify-center text-sm font-bold">×</button>
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-2">Edit Product</h2>
+        
+        <div class="grid grid-cols-2 gap-6">
+            <!-- LEFT COLUMN: Product Info + Rates -->
             <div class="grid grid-cols-2 gap-4">
+                <!-- Product ID -->
                 <div>
                     <label class="block text-sm font-medium mb-1">Product ID</label>
-                    <input type="text" value="#10001" class="w-full border rounded px-3 py-2" readonly>
-
-                    <label class="block text-sm font-medium mt-3 mb-1">Brand Name</label>
-                    <input type="text" value="Harpic" class="w-full border rounded px-3 py-2">
-
-                    <label class="block text-sm font-medium mt-3 mb-1">Product Name</label>
-                    <input type="text" value="Black Harpic" class="w-full border rounded px-3 py-2">
-
-                    <label class="block text-sm font-medium mt-3 mb-1">Stocks</label>
-                    <input type="number" value="275" class="w-full border rounded px-3 py-2">
+                    <input type="text" value="#10001" class="w-full border rounded px-3 py-2 bg-gray-100" readonly name="product_id">
                 </div>
-
-                <div class="flex flex-col items-center">
-                    <img src="https://via.placeholder.com/120" alt="Product Image" class="w-32 h-32 object-contain border rounded mb-3">
-
-                    <div class="flex gap-2 mb-4">
-                        <button type="button" class="bg-green-500 hover:bg-green-600 text-white px-3 py-2 rounded text-sm">✅ Change Img</button>
-                        <button type="button" class="bg-red-500 hover:bg-red-600 text-white px-3 py-2 rounded text-sm">🗑 Delete Img</button>
-                    </div>
-
+                <!-- Brand Name -->
+                <div>
+                    <label class="block text-sm font-medium mb-1">Brand Name</label>
+                    <input type="text" value="Harpic" class="w-full border rounded px-3 py-2" name="brand_name">
+                </div>
+                <!-- Product Name -->
+                <div>
+                    <label class="block text-sm font-medium mb-1">Product Name</label>
+                    <input type="text" value="Black Harpic" class="w-full border rounded px-3 py-2" name="product_name">
+                </div>
+                <!-- Stocks -->
+                <div>
+                    <label class="block text-sm font-medium mb-1">Stocks</label>
+                    <input type="number" value="275" class="w-full border rounded px-3 py-2" name="stocks">
+                </div>
+                <!-- MRP -->
+                <div>
                     <label class="block text-sm font-medium mb-1">MRP</label>
-                    <input type="number" value="499" class="w-full border rounded px-3 py-2 mb-2">
-
+                    <input type="number" value="499" class="w-full border rounded px-3 py-2" name="mrp">
+                </div>
+                <!-- Hotel Rate -->
+                <div>
                     <label class="block text-sm font-medium mb-1">Hotel Rate</label>
-                    <input type="number" value="499" class="w-full border rounded px-3 py-2 mb-2">
-
+                    <input type="number" value="499" class="w-full border rounded px-3 py-2" name="hotel_rate">
+                </div>
+                <!-- Retail Rate -->
+                <div>
                     <label class="block text-sm font-medium mb-1">Retail Rate</label>
-                    <input type="number" value="499" class="w-full border rounded px-3 py-2 mb-2">
-
+                    <input type="number" value="499" class="w-full border rounded px-3 py-2" name="retail_rate">
+                </div>
+                <!-- Wholesale Rate -->
+                <div>
                     <label class="block text-sm font-medium mb-1">Wholesale Rate</label>
-                    <input type="number" value="499" class="w-full border rounded px-3 py-2">
+                    <input type="number" value="499" class="w-full border rounded px-3 py-2" name="wholesale_price">
                 </div>
             </div>
 
-            <div class="flex justify-between mt-6">
-                <button type="button" onclick="closeEditModal()" class="bg-red-500 hover:bg-red-600 text-white px-5 py-2 rounded flex items-center gap-2">❌ Cancel</button>
-                <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded flex items-center gap-2">💾 Save Change</button>
+            <!-- RIGHT COLUMN: Category -->
+            <div class="flex flex-col gap-6">
+                <div class="bg-white p-4 rounded-lg shadow-sm border">
+                    <h3 class="text-base font-semibold mb-4 bg-gray-100 p-2 rounded">Category</h3>
+                    
+                    <div class="mb-4">
+                        <label class="block text-sm font-medium mb-1">Product Category</label>
+                        <select id="edit-category-dropdown" class="w-full p-2 rounded border border-gray-300" name="category">
+                            <option>Electronics</option>
+                            <option>Home Goods</option>
+                            <option>Groceries</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="custom-category-input" class="block text-sm font-medium mb-1">Add New Category</label>
+                        <div class="flex">
+                            <input type="text" id="edit-custom-category-input" class="w-full p-2 rounded-l border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="e.g., Apparel">
+                        </div>
+                    </div>
+
+                    <button id="edit-add-category-btn" class="w-full px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700" type="button">Add Category</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Buttons -->
+        <div class="flex justify-between mt-6">
+            <button type="button" onclick="closeEditModal()" 
+                class="px-6 py-2 rounded-lg bg-gray-200 text-gray-800 font-bold hover:bg-gray-300">
+                Cancel
+            </button>
+            <button type="submit" 
+                class="px-6 py-2 rounded-lg bg-purple-600 text-white font-bold hover:bg-purple-700">
+                Save Change
+            </button>
             </div>
         </form>
     </div>
-
+    
     <div id="deleteModal" class="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center hidden z-50">
         <div class="bg-white rounded-2xl shadow-lg p-6 w-96 text-center">
             <div class="flex justify-center mb-4">
@@ -521,131 +561,33 @@
                 </div>
             </div>
             <h2 class="text-xl font-bold mb-6">Are you sure you want <br> to delete this Product?</h2>
-            <div class="flex justify-center gap-4">
-                <button onclick="closeDeleteModal()" class="px-6 py-2 bg-gray-200 rounded-full font-semibold hover:bg-gray-300">
+            <div class="flex justify-center gap-4 mt-6">
+                <button onclick="closeDeleteModal()" 
+                        class="px-6 py-2 rounded-lg bg-gray-200 text-gray-800 font-bold hover:bg-gray-300">
                     Cancel
                 </button>
-                <button onclick="confirmDelete()" class="px-6 py-2 bg-red-600 text-white rounded-full font-semibold hover:bg-red-700 flex items-center gap-2">
-                    <span>🗑️</span> Delete
+                <button onclick="confirmDelete()" 
+                        class="px-6 py-2 rounded-lg bg-purple-600 text-white font-bold hover:bg-purple-700">
+                    Delete
                 </button>
             </div>
         </div>
     </div>
-    
+
+
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
     <script>
-        // Chart for Order Status
-        (function initChart(){
-            const canvas = document.getElementById('categoryChart');
-            if (!canvas) return;
-            const ctx = canvas.getContext('2d');
-            new Chart(ctx, {
-                type: 'doughnut',
-                data: {
-                    labels: ['Snacks', 'Liquid', 'Beverages'],
-                    datasets: [{
-                        data: [60, 30, 20],
-                        backgroundColor: ['#8b5cf6', '#d1d5db', '#22d3ee'],
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    cutout: '70%',
-                    plugins: { legend: { display: false } }
-                }
-            });
-        })();
-
-        // Toggle between Inventory and Add Product views
-        document.getElementById('addProductBtn').addEventListener('click', function () {
-            document.getElementById('inventory-view').classList.add('hidden');
-            document.getElementById('add-product-view').classList.remove('hidden');
-        });
-
-        document.getElementById('cancelBtn').addEventListener('click', function () {
-            document.getElementById('add-product-view').classList.add('hidden');
-            document.getElementById('inventory-view').classList.remove('hidden');
-        });
-
-        // Function to show the success modal and switch views
-        function confirmAddProduct() {
-            // First, show the success modal
-            openSuccessModal();
-            
-            // Then, hide the add view and show the inventory view after a delay
-            setTimeout(() => {
-                document.getElementById('add-product-view').classList.add('hidden');
-                document.getElementById('inventory-view').classList.remove('hidden');
-                // Optional: You could also close the success modal here if you want it to auto-disappear
-                closeSuccessModal();
-            }, 2000); // 2-second delay to let the user see the success message
-        }
-        window.confirmAddProduct = confirmAddProduct;
-
-        // Low stock toggles (right sidebar)
-        function showAllStock() {
-            document.getElementById("lowStockSummary").classList.add("hidden");
-            document.getElementById("allLowStock").classList.remove("hidden");
-        }
-        function showSummary() {
-            document.getElementById("allLowStock").classList.add("hidden");
-            document.getElementById("lowStockSummary").classList.remove("hidden");
-        }
-        window.showAllStock = showAllStock;
-        window.showSummary = showSummary;
-
-        // Edit modal
-        function openEditModal() {
-            document.getElementById("editProductModal").classList.remove("hidden");
-        }
-        function closeEditModal() {
-            document.getElementById("editProductModal").classList.add("hidden");
-        }
-        window.openEditModal = openEditModal;
-        window.closeEditModal = closeEditModal;
-
-        document.getElementById('editProductBtn').addEventListener('click', openEditModal);
-
-        // Delete modal functions
-        function openDeleteModal() {
-            document.getElementById("deleteModal").classList.remove("hidden");
-        }
-        function closeDeleteModal() {
-            document.getElementById("deleteModal").classList.add("hidden");
-        }
-        function confirmDelete() {
-            alert("Product Deleted!");
-            closeDeleteModal();
-        }
-        
-        // Success Modal functions
-        function openSuccessModal() {
-            document.getElementById("successModal").classList.remove("hidden");
-        }
-
-        function closeSuccessModal() {
-            document.getElementById("successModal").classList.add("hidden");
-        }
-        window.openSuccessModal = openSuccessModal;
-        window.closeSuccessModal = closeSuccessModal;
-
-        // Sort modal functions
+        // ✅ Sort Modal
         function openSortModal() {
             document.getElementById("sortModal").classList.remove("hidden");
         }
-
         function closeSortModal() {
             document.getElementById("sortModal").classList.add("hidden");
         }
-
         function addSort() {
             const container = document.getElementById("sortContainer");
             const row = document.createElement("div");
             row.className = "flex items-center gap-3";
-
             row.innerHTML = `
                 <span class="cursor-move text-gray-400">⋮⋮</span>
                 <select class="border rounded p-2 flex-1">
@@ -660,11 +602,9 @@
             `;
             container.appendChild(row);
         }
-
         function removeSort(button) {
             button.parentElement.remove();
         }
-
         function deleteAllSorts() {
             const container = document.getElementById("sortContainer");
             container.innerHTML = `
@@ -682,6 +622,178 @@
                 </div>
             `;
         }
+
+        // ✅ Views
+        const dashboardView = document.getElementById("dashboard-view");
+        const addProductView = document.getElementById("add-product-view");
+        const addProductBtn = document.getElementById("addProductBtn");
+        const cancelBtn = document.getElementById("cancelBtn");
+        const productTableBody = document.querySelector("table tbody");
+
+        if (addProductBtn) {
+            addProductBtn.addEventListener("click", () => {
+                dashboardView.classList.add("hidden");
+                addProductView.classList.remove("hidden");
+            });
+        }
+
+        if (cancelBtn) {
+            cancelBtn.addEventListener("click", () => {
+                addProductView.classList.add("hidden");
+                dashboardView.classList.remove("hidden");
+            });
+        }
+
+        // ✅ Add Product → append to table
+        function confirmAddProduct() {
+            const id = document.querySelector('#add-product-view input[name="product_id"]')?.value || "#NEW";
+            const brand = document.querySelector('#add-product-view input[name="brand_name"]')?.value || "Unknown";
+            const name = document.querySelector('#add-product-view input[name="product_name"]')?.value || "Unnamed";
+            const stock = document.querySelector('#add-product-view input[name="stocks"]')?.value || "0";
+            const mrp = document.querySelector('#add-product-view input[name="mrp"]')?.value || "0";
+
+            const row = document.createElement("tr");
+            row.innerHTML = `
+                <td><input type="checkbox"></td>
+                <td>${id}</td>
+                <td>${brand}</td>
+                <td><div class="flex items-center gap-2">
+                    <img src="https://via.placeholder.com/30" class="w-6 h-6 rounded"> ${name}
+                </div></td>
+                <td>${stock}</td>
+                <td>${mrp}</td>
+                <td>₹0</td>
+                <td>₹0</td>
+                <td>₹0</td>
+                <td>₹0</td>
+            `;
+            productTableBody.appendChild(row);
+
+            addProductView.classList.add("hidden");
+            dashboardView.classList.remove("hidden");
+            document.getElementById("successModal").classList.remove("hidden");
+        }
+        function closeSuccessModal() {
+            document.getElementById("successModal").classList.add("hidden");
+        }
+        document.getElementById('addProductForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            confirmAddProduct();
+        });
+
+
+        // ✅ Edit Modal
+        const editProductBtn = document.getElementById("editProductBtn");
+        if (editProductBtn) {
+            editProductBtn.addEventListener("click", () => {
+                document.getElementById("editProductModal").classList.remove("hidden");
+            });
+        }
+        function closeEditModal() {
+            document.getElementById("editProductModal").classList.add("hidden");
+        }
+
+        // ✅ Delete Modal
+        function openDeleteModal() {
+            document.getElementById("deleteModal").classList.remove("hidden");
+        }
+        function closeDeleteModal() {
+            document.getElementById("deleteModal").classList.add("hidden");
+        }
+        function confirmDelete() {
+            alert("Product deleted (demo)!");
+            closeDeleteModal();
+        }
+
+        // ✅ Low Stock Summary Toggles
+        function showAllStock() {
+            document.getElementById("lowStockSummary").classList.add("hidden");
+            document.getElementById("allLowStock").classList.remove("hidden");
+        }
+        function showSummary() {
+            document.getElementById("allLowStock").classList.add("hidden");
+            document.getElementById("lowStockSummary").classList.remove("hidden");
+        }
+
+        // ✅ File Input Name
+        const fileInput = document.getElementById('fileInput');
+        if (fileInput) {
+            fileInput.addEventListener('change', () => {
+                const fileName = document.getElementById('fileName');
+                if (fileInput.files.length > 0) {
+                    fileName.textContent = fileInput.files[0].name;
+                } else {
+                    fileName.textContent = 'No file chosen';
+                }
+            });
+        }
+
+        // ✅ Pie Chart (Category)
+        const ctx = document.getElementById('categoryChart').getContext('2d');
+        new Chart(ctx, {
+          type: 'doughnut',
+          data: {
+            labels: ['Snacks', 'Liquid', 'Beverages'],
+            datasets: [{
+              data: [45, 35, 20], // values (you can change)
+              backgroundColor: ['#8b5cf6', '#d1d5db', '#22d3ee'], // purple, gray, cyan
+              borderWidth: 0
+            }]
+          },
+          options: {
+            responsive: true,
+            cutout: '70%',
+            plugins: {
+              legend: {
+                position: 'bottom',
+                labels: {
+                  usePointStyle: true,
+                  pointStyle: 'circle',
+                  padding: 15,
+                  font: {
+                    size: 14
+                  }
+                }
+              }
+            }
+          }
+        });
     </script>
+   <script>
+/* Add-product view */
+const addCategoryBtn = document.getElementById("add-category-btn");
+const categoryDropdown = document.getElementById("category-dropdown");
+const customCategoryInput = document.getElementById("custom-category-input");
+
+if (addCategoryBtn) {
+  addCategoryBtn.addEventListener("click", () => {
+    const newCategory = customCategoryInput.value.trim();
+    if (!newCategory) return alert("Please enter a category name!");
+    const option = document.createElement("option");
+    option.textContent = newCategory; option.value = newCategory;
+    categoryDropdown.appendChild(option);
+    categoryDropdown.value = newCategory;
+    customCategoryInput.value = "";
+  });
+}
+
+/* Edit modal */
+const editAddCategoryBtn = document.getElementById("edit-add-category-btn");
+const editCategoryDropdown = document.getElementById("edit-category-dropdown");
+const editCustomCategoryInput = document.getElementById("edit-custom-category-input");
+
+if (editAddCategoryBtn) {
+  editAddCategoryBtn.addEventListener("click", () => {
+    const newCategory = editCustomCategoryInput.value.trim();
+    if (!newCategory) return alert("Please enter a category name!");
+    const option = document.createElement("option");
+    option.textContent = newCategory; option.value = newCategory;
+    editCategoryDropdown.appendChild(option);
+    editCategoryDropdown.value = newCategory;
+    editCustomCategoryInput.value = "";
+  });
+}
+</script>
+
 </body>
 </html>
