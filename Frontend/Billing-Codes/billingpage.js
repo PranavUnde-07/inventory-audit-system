@@ -27,6 +27,18 @@
         dropdownButton.addEventListener('click', () => {
             dropdownMenu.classList.toggle('hidden');
         });
+        const products = [
+    { name: 'Harpic', mrp: 499.00, qty: 5, rate: 399.00 },
+    { name: 'Banana chips', mrp: 150.00, qty: 3, rate: 120.00 },
+    { name: 'Coffee', mrp: 850.00, qty: 1, rate: 800.00 },
+    { name: 'Coca Cola', mrp: 45.00, qty: 12, rate: 42.00 },
+    { name: 'Tea powder', mrp: 250.00, qty: 2, rate: 225.00 },
+    { name: 'Milk', mrp: 60.00, qty: 4, rate: 58.00 },
+    { name: 'Bread', mrp: 40.00, qty: 2, rate: 40.00 },
+    { name: 'Butter', mrp: 120.00, qty: 1, rate: 110.00 },
+    { name: 'Cheese', mrp: 300.00, qty: 2, rate: 280.00 },
+    { name: 'Biscuits', mrp: 50.00, qty: 6, rate: 45.00 },                                                                                                 
+   ];
 
         // Handle dropdown item selection
         dropdownItems.forEach(item => {
