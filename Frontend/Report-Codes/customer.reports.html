@@ -12,21 +12,32 @@
             font-family: 'Inter', sans-serif;
             overflow: hidden;
         }
-         /* Custom scrollbar for webkit browsers */
-        .custom-scrollbar::-webkit-scrollbar {
+        table { width: 100%; border-collapse: collapse; }
+        th, td { padding: 8px 16px; border-bottom: 1px solid #e2e8f0; text-align: left; }
+        th { background-color:#c2b8ff; font-weight: 600; color: #475569; font-size: .875rem; text-transform: uppercase; position: sticky; top: 0; z-index: 10; }
+        tr:last-child td { border-bottom: none; }
+        
+        /* Custom scrollbar styling for the table container */
+        .table-container::-webkit-scrollbar {
             width: 8px;
             height: 8px;
         }
-        .custom-scrollbar::-webkit-scrollbar-track {
-            background: #f1f1f1;
-            border-radius: 10px;
+        .table-container::-webkit-scrollbar-thumb {
+            background-color: #d1d5db;
+            border-radius: 4px;
         }
-        .custom-scrollbar::-webkit-scrollbar-thumb {
-            background: #d4d4d8;
-            border-radius: 10px;
+        .table-container::-webkit-scrollbar-track {
+            background-color: #f1f5f9;
         }
-        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-            background: #a1a1aa;
+
+        .table-container { 
+            overflow: auto; /* Allows both horizontal and vertical scrolling */
+        }
+        
+        /* All orders modal table container */
+        .all-orders-table-container {
+             max-height: 40vh; /* Set a max height */
+             overflow-y: auto; /* Enable vertical scrolling */
         }
     </style>
 </head>
@@ -38,8 +49,7 @@
         <aside class="w-64 bg-white p-6 flex flex-col justify-between shadow-md">
             <div>
                 <div class="mb-8 flex items-center justify-center">
-                     <div class="w-10 h-10 bg-gray-200 rounded-lg mr-4"></div>
-                    <h1 class="text-2xl font-bold text-gray-800">D-Mart</h1>
+                     <h1 class="text-2xl font-bold text-gray-800">D-Mart</h1>
                 </div>
                 <nav>
                     <ul>
@@ -62,7 +72,7 @@
                             </a>
                         </li>
                          <li class="mb-2">
-                            <a href="#" class="flex items-center p-3 bg-purple-100 text-purple-700 rounded-lg font-semibold">
+                            <a href="#" class="flex items-center p-3 bg-purple-100 text-purple-700 rounded-lg font-semibold" style="background-color:#EDEBFB; color:#6D5BD0;">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-3"><path d="M3 3v18h18"></path><path d="M18.7 8a6 6 0 0 0-8.4-8.4"></path><path d="M13 10.5a2.5 2.5 0 0 1-3.5-3.5"></path></svg>
                                 REPORTS
                             </a>
@@ -87,43 +97,37 @@
         </aside>
 
         <!-- Main Content Area -->
-        <main class="bg-gray-100 p-8 flex-1 min-w-0 flex flex-col">
-            <!-- Header Section -->
-            <div class="flex-shrink-0 flex justify-between items-center mb-6">
-                <h1 class="text-3xl font-bold text-gray-800">Customer Report</h1>
-                <div class="flex items-center space-x-4">
-                    <button class="flex items-center px-4 py-2 bg-white border border-gray-300 rounded-lg shadow-sm hover:bg-gray-50 font-semibold">
-                        Export
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                    </button>
-                    <button class="px-4 py-2 bg-white border border-gray-300 rounded-lg shadow-sm hover:bg-gray-50 font-semibold">Back</button>
-                    <div class="relative flex items-center bg-white border border-gray-300 rounded-lg shadow-sm">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-600 absolute left-3 z-10 pointer-events-none"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-                        <input type="text" id="datepicker" class="w-full text-center pl-10 pr-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 font-medium cursor-pointer">
-                   </div>
+        <main class="p-8 flex-1 min-w-0 flex flex-col">
+            <!-- Main content wrapper -->
+            <div class="bg-white p-6 rounded-2xl shadow-sm h-full flex flex-col">
+                 <!-- Header Section -->
+                <div class="flex-shrink-0 flex justify-between items-center mb-6">
+                    <h1 class="text-2xl font-bold text-gray-800">Customer Report</h1>
+                    <div class="flex items-center space-x-4">
+                        <button class="flex items-center text-gray-600 font-semibold border border-gray-300 px-4 py-2 rounded-lg hover:bg-gray-100">
+                           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                               <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                           </svg>
+                           Back
+                        </button>
+                        <div class="relative flex items-center bg-white border border-gray-300 rounded-lg shadow-sm">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-600 absolute left-3 z-10 pointer-events-none"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                            <input type="text" id="datepicker" class="w-full text-center pl-10 pr-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 font-medium cursor-pointer">
+                       </div>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Customer Report Table -->
-            <div class="bg-white rounded-2xl shadow-lg p-6 flex-grow flex flex-col">
-                <div class="overflow-y-auto custom-scrollbar flex-grow">
+                <!-- Customer Report Table -->
+                <div class="table-container flex-grow">
                     <table class="min-w-full">
-                        <thead class="border-b-2 border-gray-200 sticky top-0 bg-white">
+                        <thead>
                             <tr>
-                                <th class="px-6 py-3 text-left text-sm font-semibold text-gray-600 tracking-wider">
-                                    <div class="flex items-center">Customer ID <svg class="ml-1 w-4 h-4 text-gray-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7 15 5 5 5-5"/><path d="m7 9 5-5 5 5"/></svg></div>
-                                </th>
-                                <th class="px-6 py-3 text-left text-sm font-semibold text-gray-600 tracking-wider">
-                                    <div class="flex items-center">Customer Name <svg class="ml-1 w-4 h-4 text-gray-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7 15 5 5 5-5"/><path d="m7 9 5-5 5 5"/></svg></div>
-                                </th>
-                                <th class="px-6 py-3 text-left text-sm font-semibold text-gray-600 tracking-wider">
-                                    <div class="flex items-center">Contact No. <svg class="ml-1 w-4 h-4 text-gray-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7 15 5 5 5-5"/><path d="m7 9 5-5 5 5"/></svg></div>
-                                </th>
-                                <th class="px-6 py-3 text-left text-sm font-semibold text-gray-600 tracking-wider">
-                                    <div class="flex items-center">Category <svg class="ml-1 w-4 h-4 text-gray-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7 15 5 5 5-5"/><path d="m7 9 5-5 5 5"/></svg></div>
-                                </th>
-                                <th class="px-6 py-3 text-left text-sm font-semibold text-gray-600 tracking-wider">Orders</th>
-                                <th class="px-6 py-3 text-left text-sm font-semibold text-gray-600 tracking-wider"></th>
+                                <th class="p-4">Customer ID</th>
+                                <th class="p-4">Customer Name</th>
+                                <th class="p-4">Contact No.</th>
+                                <th class="p-4">Category</th>
+                                <th class="p-4">Orders</th>
+                                <th class="p-4"></th>
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-gray-200">
@@ -131,26 +135,124 @@
                         </tbody>
                     </table>
                 </div>
+
+                 <!-- Action Buttons: Moved below the table -->
+                <div class="mt-6 flex justify-end items-center">
+                    <button class="flex items-center text-gray-600 font-semibold border border-gray-300 px-4 py-2 rounded-lg hover:bg-gray-100">
+                        Export
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                    </button>
+                </div>
             </div>
         </main>
     </div>
+
+    <!-- Customer Details Modal -->
+    <div id="customerModal" class="fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center hidden z-50">
+        <div class="bg-white rounded-2xl shadow-xl p-8 w-full max-w-md">
+            <!-- Modal Header -->
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold text-gray-800">Customer Details</h2>
+                <button id="closeModalBtn" class="text-gray-500 hover:text-gray-800">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+            </div>
+
+            <!-- Customer Info -->
+            <div class="space-y-3 mb-6 border-b pb-6">
+                 <div class="flex justify-between text-gray-600">
+                    <span>Customer ID</span>
+                    <span id="modalCustomerId" class="font-medium text-gray-800"></span>
+                </div>
+                 <div class="flex justify-between text-gray-600">
+                    <span>Name</span>
+                    <span id="modalCustomerName" class="font-medium text-gray-800"></span>
+                </div>
+            </div>
+
+            <!-- Recent Orders -->
+            <div class="mb-6">
+                <h3 class="text-lg font-semibold text-gray-800 mb-4">Recent 3 Orders</h3>
+                <div class="space-y-2" id="modalOrders">
+                    <!-- Orders will be populated by JS -->
+                </div>
+            </div>
+            
+            <!-- Summary -->
+             <div class="space-y-3 mb-8 border-t pt-6">
+                 <div class="flex justify-between text-gray-600">
+                    <span>Total Orders</span>
+                    <span id="modalTotalOrders" class="font-medium text-gray-800"></span>
+                </div>
+                 <div class="flex justify-between text-gray-600">
+                    <span>Total Spent</span>
+                    <span id="modalTotalSpent" class="font-medium text-gray-800"></span>
+                </div>
+                  <div class="flex justify-between text-gray-600">
+                    <span>Recent Dues</span>
+                    <span id="modalRecentDues" class="font-medium text-red-600"></span>
+                </div>
+                 <div class="flex justify-between text-gray-600">
+                    <span>Last Payment</span>
+                    <span id="modalLastPayment" class="font-medium text-gray-800"></span>
+                </div>
+            </div>
+
+            <!-- Action Button -->
+            <button id="viewAllOrdersBtn" class="w-full bg-gray-100 text-gray-700 font-semibold py-3 rounded-lg hover:bg-gray-200 transition-colors">
+                VIEW ALL ORDERS
+            </button>
+        </div>
+    </div>
+    
+    <!-- All Orders Modal -->
+    <div id="allOrdersModal" class="fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center hidden z-50">
+        <div class="bg-white rounded-2xl shadow-xl p-8 w-full max-w-2xl">
+            <!-- Modal Header -->
+            <div class="flex justify-between items-center mb-4">
+                <div>
+                    <h2 class="text-2xl font-bold text-gray-800">All Orders</h2>
+                    <p class="text-gray-600">for <span id="allOrdersCustomerName" class="font-semibold"></span></p>
+                </div>
+                <button id="closeAllOrdersModalBtn" class="text-gray-500 hover:text-gray-800">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+            </div>
+
+            <!-- All Orders Table -->
+            <div class="all-orders-table-container table-container border rounded-lg">
+                <table class="min-w-full">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th class="p-4 text-sm font-semibold text-gray-600">Order ID</th>
+                            <th class="p-4 text-sm font-semibold text-gray-600">Date</th>
+                            <th class="p-4 text-sm font-semibold text-gray-600 text-right">Amount</th>
+                            <th class="p-4 text-sm font-semibold text-gray-600 text-center">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="allOrdersTbody" class="divide-y divide-gray-200">
+                        <!-- All orders will be populated by JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
 
 <script src="https://cdn.jsdelivr.net/npm/litepicker/dist/litepicker.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         const customerData = [
-            { id: '#123456', name: 'Raj Kundra', contact: 'X6985XXXX', category: 'Wholesale' },
-            { id: '#123457', name: 'Priya Singh', contact: 'X5432XXXX', category: 'Retailer' },
-            { id: '#123458', name: 'Amit Patel', contact: 'X9876XXXX', category: 'Hotel-Line' },
-            { id: '#123459', name: 'Sneha Sharma', contact: 'X1234XXXX', category: 'Wholesale' },
-            { id: '#123460', name: 'Vikram Rathore', contact: 'X8765XXXX', category: 'Retailer' },
-            { id: '#123461', name: 'Anjali Mehta', contact: 'X2345XXXX', category: 'Wholesale' },
-            { id: '#123462', name: 'Rohan Joshi', contact: 'X7654XXXX', category: 'Hotel-Line' },
-            { id: '#123463', name: 'Kavita Iyer', contact: 'X3456XXXX', category: 'Retailer' },
-            { id: '#123464', name: 'Suresh Menon', contact: 'X6543XXXX', category: 'Wholesale' },
-            { id: '#123465', name: 'Deepika Nair', contact: 'X4567XXXX', category: 'Retailer' },
-            { id: '#123466', name: 'Arjun Reddy', contact: 'X5678XXXX', category: 'Wholesale' },
-            { id: '#123467', name: 'Meera Desai', contact: 'X0987XXXX', category: 'Hotel-Line' }
+             { id: '#123456', name: 'Raj Kundra', contact: 'X6985XXXX', category: 'Wholesale', orders: [{id: 'ORD-101', date: '15 Jul 2025', amount: 1500, status: 'Delivered'}, {id: 'ORD-102', date: '20 Jun 2025', amount: 2500, status: 'Delivered'}, {id: 'ORD-103', date: '01 May 2025', amount: 1000, status: 'Cancelled'}], totalSpent: 5000, totalOrders: 3, recentDues: 0, lastPayment: '15 Jul 2025' },
+             { id: '#123457', name: 'Priya Singh', contact: 'X5432XXXX', category: 'Retailer', orders: [{id: 'ORD-001', date: '12 Jan 2024', amount: 500, status: 'Delivered'}, {id: 'ORD-002', date: '05 Jan 2024', amount: 500, status: 'Delivered'}, {id: 'ORD-003', date: '28 Dec 2023', amount: 500, status: 'Delivered'}, {id: 'ORD-004', date: '20 Dec 2023', amount: 1200, status: 'Pending'}, {id: 'ORD-005', date: '15 Dec 2023', amount: 800, status: 'Delivered'}, {id: 'ORD-006', date: '10 Dec 2023', amount: 950, status: 'Delivered'}], totalSpent: 7500, totalOrders: 21, recentDues: 1200, lastPayment: '15 Aug 2025' },
+             { id: '#123458', name: 'Amit Patel', contact: 'X9876XXXX', category: 'Hotel-Line', orders: [{id: 'ORD-201', date: '22 Aug 2025', amount: 3000, status: 'Delivered'}, {id: 'ORD-202', date: '15 Aug 2025', amount: 4500, status: 'Pending'}, {id: 'ORD-203', date: '01 Aug 2025', amount: 2000, status: 'Delivered'}, {id: 'ORD-204', date: '25 Jul 2025', amount: 2500, status: 'Delivered'}], totalSpent: 12000, totalOrders: 8, recentDues: 3000, lastPayment: '22 Aug 2025' },
+             { id: '#123459', name: 'Sneha Sharma', contact: 'X1234XXXX', category: 'Wholesale', orders: [{id: 'ORD-301', date: '01 Sep 2025', amount: 8000, status: 'Delivered'}], totalSpent: 8000, totalOrders: 1, recentDues: 0, lastPayment: '01 Sep 2025' },
+             { id: '#123460', name: 'Vikram Rathore', contact: 'X8765XXXX', category: 'Retailer', orders: [{id: 'ORD-401', date: '10 Sep 2025', amount: 750, status: 'Delivered'}, {id: 'ORD-402', date: '02 Sep 2025', amount: 1250, status: 'Delivered'}, {id: 'ORD-403', date: '25 Aug 2025', amount: 1000, status: 'Delivered'}, {id: 'ORD-404', date: '18 Aug 2025', amount: 500, status: 'Cancelled'}, {id: 'ORD-405', date: '10 Aug 2025', amount: 500, status: 'Delivered'}], totalSpent: 4000, totalOrders: 5, recentDues: 0, lastPayment: '10 Sep 2025' },
+             { id: '#123461', name: 'Anjali Mehta', contact: 'X2345XXXX', category: 'Wholesale', orders: [], totalSpent: 0, totalOrders: 0, recentDues: 0, lastPayment: 'N/A' },
+             { id: '#123462', name: 'Rohan Joshi', contact: 'X7654XXXX', category: 'Hotel-Line', orders: [{id: 'ORD-501', date: '18 Aug 2025', amount: 6000, status: 'Pending'}], totalSpent: 15000, totalOrders: 4, recentDues: 6000, lastPayment: '10 Jul 2025' },
+             { id: '#123463', name: 'Kavita Iyer', contact: 'X3456XXXX', category: 'Retailer', orders: [{id: 'ORD-601', date: '05 Sep 2025', amount: 900, status: 'Delivered'}, {id: 'ORD-602', date: '28 Aug 2025', amount: 1100, status: 'Delivered'}], totalSpent: 2000, totalOrders: 2, recentDues: 0, lastPayment: '05 Sep 2025' }
         ];
 
         const tableBody = document.querySelector('tbody');
@@ -163,11 +265,11 @@
                     <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-800">${customer.contact}</td>
                     <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-800">${customer.category}</td>
                     <td class="px-6 py-4 whitespace-nowrap">
-                        <button class="px-4 py-1 text-sm font-semibold text-purple-700 bg-purple-100 rounded-full hover:bg-purple-200">SEE ALL</button>
+                        <button class="see-all-btn px-4 py-1 text-sm font-semibold text-purple-700 bg-purple-100 rounded-full hover:bg-purple-200" data-id="${customer.id}">SEE ALL</button>
                     </td>
                     <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                         <button class="text-gray-500 hover:text-gray-700">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg>
                         </button>
                     </td>
                 </tr>
@@ -184,11 +286,114 @@
             separator: ' - ',
             startDate: new Date('2025-05-01'),
             endDate: new Date('2025-06-01'),
-            setup: (picker) => {
-                picker.on('selected', (date1, date2) => {
-                    // The input value is updated automatically by the library
-                });
-            },
+        });
+        
+        // Modal Functionality
+        const customerModal = document.getElementById('customerModal');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+        const seeAllBtns = document.querySelectorAll('.see-all-btn');
+        const viewAllOrdersBtn = document.getElementById('viewAllOrdersBtn');
+        
+        const allOrdersModal = document.getElementById('allOrdersModal');
+        const closeAllOrdersModalBtn = document.getElementById('closeAllOrdersModalBtn');
+
+        let currentCustomerId = null;
+
+        const getStatusBadge = (status) => {
+             const statusClasses = {
+                'Delivered': 'bg-green-100 text-green-800',
+                'Pending': 'bg-yellow-100 text-yellow-800',
+                'Cancelled': 'bg-red-100 text-red-800'
+            };
+            return `<span class="px-2.5 py-1 text-xs font-semibold rounded-full ${statusClasses[status] || 'bg-gray-100 text-gray-800'}">${status}</span>`;
+        }
+
+        const openCustomerModal = (customerId) => {
+            currentCustomerId = customerId;
+            const customer = customerData.find(c => c.id === customerId);
+            if (!customer) return;
+
+            document.getElementById('modalCustomerId').textContent = customer.id;
+            document.getElementById('modalCustomerName').textContent = customer.name;
+            
+            const ordersContainer = document.getElementById('modalOrders');
+            if (customer.orders.length > 0) {
+                 ordersContainer.innerHTML = `
+                    <div class="grid grid-cols-3 text-sm font-semibold text-gray-500 mb-2 px-2">
+                        <span>Order ID</span>
+                        <span>Date</span>
+                        <span class="text-right">Amount</span>
+                    </div>
+                    ${customer.orders.slice(0, 3).map(order => `
+                        <div class="grid grid-cols-3 text-sm text-gray-800 py-1 px-2">
+                            <span>${order.id}</span>
+                            <span>${order.date}</span>
+                            <span class="text-right font-medium">₹${order.amount.toLocaleString('en-IN')}</span>
+                        </div>
+                    `).join('')}
+                `;
+            } else {
+                 ordersContainer.innerHTML = `<p class="text-center text-gray-500">No recent orders found.</p>`;
+            }
+
+            document.getElementById('modalTotalOrders').textContent = customer.totalOrders;
+            document.getElementById('modalTotalSpent').textContent = `₹${customer.totalSpent.toLocaleString('en-IN')}`;
+            document.getElementById('modalRecentDues').textContent = `₹${customer.recentDues.toLocaleString('en-IN')}`;
+            document.getElementById('modalLastPayment').textContent = customer.lastPayment;
+            
+            customerModal.classList.remove('hidden');
+        };
+        
+        const openAllOrdersModal = () => {
+             if(!currentCustomerId) return;
+             const customer = customerData.find(c => c.id === currentCustomerId);
+             if (!customer) return;
+
+             document.getElementById('allOrdersCustomerName').textContent = customer.name;
+             const allOrdersTbody = document.getElementById('allOrdersTbody');
+             
+             if (customer.orders.length > 0) {
+                allOrdersTbody.innerHTML = customer.orders.map(order => `
+                    <tr class="hover:bg-gray-50">
+                        <td class="p-4 whitespace-nowrap font-medium text-gray-800">${order.id}</td>
+                        <td class="p-4 whitespace-nowrap text-gray-600">${order.date}</td>
+                        <td class="p-4 whitespace-nowrap text-right font-medium text-gray-800">₹${order.amount.toLocaleString('en-IN')}</td>
+                        <td class="p-4 whitespace-nowrap text-center">${getStatusBadge(order.status)}</td>
+                    </tr>
+                `).join('');
+             } else {
+                 allOrdersTbody.innerHTML = `<tr><td colspan="4" class="text-center p-6 text-gray-500">No orders found for this customer.</td></tr>`;
+             }
+             
+             customerModal.classList.add('hidden');
+             allOrdersModal.classList.remove('hidden');
+        };
+
+        const closeCustomerModal = () => {
+            customerModal.classList.add('hidden');
+        };
+
+        const closeAllOrdersModal = () => {
+            allOrdersModal.classList.add('hidden');
+        }
+
+        seeAllBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const customerId = e.currentTarget.dataset.id;
+                openCustomerModal(customerId);
+            });
+        });
+
+        closeModalBtn.addEventListener('click', closeCustomerModal);
+        viewAllOrdersBtn.addEventListener('click', openAllOrdersModal);
+        closeAllOrdersModalBtn.addEventListener('click', closeAllOrdersModal);
+
+        customerModal.addEventListener('click', (e) => {
+            if (e.target === customerModal) closeCustomerModal();
+        });
+        
+        allOrdersModal.addEventListener('click', (e) => {
+            if (e.target === allOrdersModal) closeAllOrdersModal();
         });
     });
 </script>
